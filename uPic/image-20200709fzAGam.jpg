@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://www.carlstalhood.com/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://www.carlstalhood.com/wp-content/themes/twentyfifteen/js/html5.js"></script>
+	<![endif]-->
+	<script>(function(html){html.className=html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>VMware Horizon 7.12 Connection Server &#8211; Carl Stalhood</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect'/>
+<link rel="alternate" type="application/rss+xml" title="Carl Stalhood &raquo; Feed" href="https://www.carlstalhood.com/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Carl Stalhood &raquo; Comments Feed" href="https://www.carlstalhood.com/comments/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Carl Stalhood &raquo; VMware Horizon 7.12 Connection Server Comments Feed" href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/feed/"/>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+	<link rel='stylesheet' id='sdm-styles-css' href='https://www.carlstalhood.com/wp-content/plugins/simple-download-monitor/css/sdm_wp_styles.css?ver=fdb93d01b75e573ef6ab605192999ad6' type='text/css' media='all'/>
+<link rel='stylesheet' id='twentyfifteen-jetpack-css' href='https://c0.wp.com/p/jetpack/8.7/modules/theme-tools/compat/twentyfifteen.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='dashicons-css' href='https://c0.wp.com/c/5.4.2/wp-includes/css/dashicons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='menu-icons-extra-css' href='https://www.carlstalhood.com/wp-content/plugins/menu-icons/css/extra.min.css?ver=0.12.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='wp-block-library-css' href='https://c0.wp.com/c/5.4.2/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all'/>
+<style id='wp-block-library-inline-css' type='text/css'>.has-text-align-justify{text-align:justify}</style>
+<link rel='stylesheet' id='wp-block-library-theme-css' href='https://c0.wp.com/c/5.4.2/wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='parent-style-css' href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen/style.css?ver=fdb93d01b75e573ef6ab605192999ad6' type='text/css' media='all'/>
+<link rel='stylesheet' id='child-style-css' href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen-child/style.css?ver=fdb93d01b75e573ef6ab605192999ad6' type='text/css' media='all'/>
+<link rel='stylesheet' id='twentyfifteen-fonts-css' href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all'/>
+<link rel='stylesheet' id='genericons-css' href='https://www.carlstalhood.com/wp-content/plugins/menu-icons/vendor/codeinwp/icon-picker/css/types/genericons.min.css,qver=3.4.pagespeed.ce.4Uo7i5YFN0.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='twentyfifteen-style-css' href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen-child/style.css?ver=fdb93d01b75e573ef6ab605192999ad6' type='text/css' media='all'/>
+<link rel='stylesheet' id='twentyfifteen-block-style-css' href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen/css/blocks.css?ver=20181230' type='text/css' media='all'/>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen/css/ie.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='https://www.carlstalhood.com/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css' href='https://c0.wp.com/p/jetpack/8.7/css/jetpack.css' type='text/css' media='all'/>
+<script>if(document.location.protocol!="https:"){document.location=document.URL.replace(/^http:/i,"https:");}</script><script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript'>//<![CDATA[
+var sdm_ajax_script={"ajaxurl":"https:\/\/www.carlstalhood.com\/wp-admin\/admin-ajax.php"};
+//]]></script>
+<script type='text/javascript' src='https://www.carlstalhood.com/wp-content/plugins/simple-download-monitor/js/sdm_wp_scripts.js?ver=fdb93d01b75e573ef6ab605192999ad6'></script>
+<link rel='https://api.w.org/' href='https://www.carlstalhood.com/wp-json/'/>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.carlstalhood.com/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.carlstalhood.com/wp-includes/wlwmanifest.xml"/> 
+<link rel='prev' title='VMware Horizon 7.12 Composer' href='https://www.carlstalhood.com/vmware-horizon-7-composer/'/>
+<link rel='next' title='VMware Horizon 7.12 Configuration' href='https://www.carlstalhood.com/vmware-horizon-7-configuration/'/>
+
+<link rel="canonical" href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/"/>
+<link rel='shortlink' href='https://www.carlstalhood.com/?p=3285'/>
+
+<link rel='dns-prefetch' href='//jetpack.wordpress.com'/>
+<link rel='dns-prefetch' href='//s0.wp.com'/>
+<link rel='dns-prefetch' href='//s1.wp.com'/>
+<link rel='dns-prefetch' href='//s2.wp.com'/>
+<link rel='dns-prefetch' href='//public-api.wordpress.com'/>
+<link rel='dns-prefetch' href='//0.gravatar.com'/>
+<link rel='dns-prefetch' href='//1.gravatar.com'/>
+<link rel='dns-prefetch' href='//2.gravatar.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<link rel='dns-prefetch' href='//c0.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="icon" href="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/11/favicon.png?fit=32%2C32&#038;ssl=1" sizes="32x32"/>
+<link rel="icon" href="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/11/favicon.png?fit=32%2C32&#038;ssl=1" sizes="192x192"/>
+<link rel="apple-touch-icon" href="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/11/favicon.png?fit=32%2C32&#038;ssl=1"/>
+<meta name="msapplication-TileImage" content="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/11/favicon.png?fit=32%2C32&#038;ssl=1"/>
+</head>
+
+<body data-rsssl=1 class="post-template-default single single-post postid-3285 single-format-standard wp-embed-responsive">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div id="sidebar" class="sidebar">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="https://www.carlstalhood.com/" rel="home">Carl Stalhood</a></p>
+												<p class="site-description">Filling gaps in EUC vendor documentation</p>
+										<button class="secondary-toggle">Menu and widgets</button>
+			</div><!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-citrix-container"><ul id="menu-citrix" class="nav-menu"><li id="menu-item-2761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2761"><a href="https://www.carlstalhood.com/xaxd/">Citrix Virtual Apps and Desktops</a>
+<ul class="sub-menu">
+	<li id="menu-item-28820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28820"><a href="https://www.carlstalhood.com/citrix-virtual-apps-and-desktops-cr/">Citrix Virtual Apps and Desktops (CVAD) 2006</a></li>
+	<li id="menu-item-38995" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38995"><a href="https://www.carlstalhood.com/xaxd/citrix-virtual-apps-and-desktops-cvad-1912-ltsr/">Citrix Virtual Apps and Desktops (CVAD) 1912 LTSR CU1</a></li>
+	<li id="menu-item-16808" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16808"><a href="https://www.carlstalhood.com/xaxd/xenappxendesktop-7-15-ltsr/">XenApp/XenDesktop 7.15.6000 LTSR</a></li>
+	<li id="menu-item-2763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2763"><a href="https://www.carlstalhood.com/xenappxendesktop/">XenApp/XenDesktop 7.6 LTSR CU8</a></li>
+</ul>
+</li>
+<li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-192"><a href="https://www.carlstalhood.com/citrix-profile-management/">Citrix Profile Management 2006</a></li>
+<li id="menu-item-579" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-579"><a href="https://www.carlstalhood.com/provisioning-services/">Citrix Provisioning 2006</a></li>
+<li id="menu-item-8991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8991"><a href="https://www.carlstalhood.com/app-layering/">Citrix App Layering 2003</a></li>
+<li id="menu-item-3009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3009"><a href="https://www.carlstalhood.com/storefront-menu/">Citrix StoreFront</a>
+<ul class="sub-menu">
+	<li id="menu-item-3010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3010"><a href="https://www.carlstalhood.com/storefront-cr/">StoreFront 1912 LTSR CU1 through 3.5</a></li>
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://www.carlstalhood.com/storefront/">StoreFront 2.6 through 3.0.8000</a></li>
+</ul>
+</li>
+<li id="menu-item-1100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1100"><a href="https://www.carlstalhood.com/netscaler-menu/">Citrix ADC / NetScaler</a>
+<ul class="sub-menu">
+	<li id="menu-item-34660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34660"><a href="https://www.carlstalhood.com/netscaler-menu/citrix-adc-13/">Citrix ADC 13</a></li>
+	<li id="menu-item-16006" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16006"><a href="https://www.carlstalhood.com/netscaler-menu/netscaler-12/">Citrix ADC 12.1 / NetScaler 12</a></li>
+	<li id="menu-item-3931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3931"><a href="https://www.carlstalhood.com/netscaler-11-1/">NetScaler 11.1</a></li>
+	<li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="https://www.carlstalhood.com/netscaler/">NetScaler 10.5</a></li>
+</ul>
+</li>
+<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-73"><a href="https://www.carlstalhood.com/workspace-app-for-windows/">Citrix Workspace app 2006.1</a></li>
+<li id="menu-item-3300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3300"><a href="https://www.carlstalhood.com/vmware-horizon/">VMware Horizon</a>
+<ul class="sub-menu">
+	<li id="menu-item-3301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3301"><a href="https://www.carlstalhood.com/vmware-horizon-7/">VMware Horizon 7.12</a></li>
+	<li id="menu-item-1434" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1434"><a href="https://www.carlstalhood.com/vmware-horizon-6/">VMware Horizon 6</a></li>
+</ul>
+</li>
+<li id="menu-item-3841" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3841"><a href="https://www.carlstalhood.com/category/euc-weekly-digest/">EUC Weekly Digests</a></li>
+<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="https://www.carlstalhood.com/about-carl-stalhood/"><i class="_mi _before dashicons dashicons-admin-users" aria-hidden="true"></i><span>About Carl Stalhood</span></a></li>
+</ul></div>			</nav><!-- .main-navigation -->
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+				<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://www.carlstalhood.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s"/>
+				</label>
+				<input type="submit" class="search-submit screen-reader-text" value="Search"/>
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+											<li>
+					<a href="https://www.carlstalhood.com/euc-weekly-digest-july-4-2020/">EUC Weekly Digest &#8211; July 4, 2020</a>
+									</li>
+											<li>
+					<a href="https://www.carlstalhood.com/euc-weekly-digest-june-27-2020/">EUC Weekly Digest &#8211; June 27, 2020</a>
+									</li>
+											<li>
+					<a href="https://www.carlstalhood.com/euc-weekly-digest-june-20-2020/">EUC Weekly Digest &#8211; June 20, 2020</a>
+									</li>
+											<li>
+					<a href="https://www.carlstalhood.com/euc-weekly-digest-june-13-2020/">EUC Weekly Digest &#8211; June 13, 2020</a>
+									</li>
+											<li>
+					<a href="https://www.carlstalhood.com/euc-weekly-digest-june-6-2020/">EUC Weekly Digest &#8211; June 6, 2020</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2><form action="https://www.carlstalhood.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name='cat' id='cat' class='postform'>
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="4">ADC / NetScaler&nbsp;&nbsp;(94)</option>
+	<option class="level-1" value="43">&nbsp;&nbsp;&nbsp;Citrix ADC 12.1&nbsp;&nbsp;(8)</option>
+	<option class="level-1" value="44">&nbsp;&nbsp;&nbsp;Citrix ADC 13&nbsp;&nbsp;(9)</option>
+	<option class="level-2" value="46">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Citrix Gateway 13&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="45">&nbsp;&nbsp;&nbsp;Citrix Gateway&nbsp;&nbsp;(2)</option>
+	<option class="level-1" value="15">&nbsp;&nbsp;&nbsp;NetScaler 10.5&nbsp;&nbsp;(17)</option>
+	<option class="level-2" value="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load Balancing&nbsp;&nbsp;(7)</option>
+	<option class="level-2" value="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetScaler Gateway&nbsp;&nbsp;(10)</option>
+	<option class="level-1" value="13">&nbsp;&nbsp;&nbsp;NetScaler 11&nbsp;&nbsp;(20)</option>
+	<option class="level-2" value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load Balancing NetScaler 11&nbsp;&nbsp;(6)</option>
+	<option class="level-2" value="16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetScaler Gateway 11&nbsp;&nbsp;(10)</option>
+	<option class="level-1" value="23">&nbsp;&nbsp;&nbsp;NetScaler 11.1&nbsp;&nbsp;(21)</option>
+	<option class="level-2" value="24">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load Balancing NetScaler 11.1&nbsp;&nbsp;(8)</option>
+	<option class="level-2" value="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetScaler Gateway 11.1&nbsp;&nbsp;(8)</option>
+	<option class="level-1" value="32">&nbsp;&nbsp;&nbsp;NetScaler 12&nbsp;&nbsp;(23)</option>
+	<option class="level-2" value="36">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Load Balancing NetScaler 12&nbsp;&nbsp;(5)</option>
+	<option class="level-2" value="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NetScaler Gateway 12&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="39">Blog&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="31">Citrix App Layering&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="12">Citrix Provisioning&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="21">EUC Weekly Digest&nbsp;&nbsp;(205)</option>
+	<option class="level-0" value="9">Profile Management&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="8">Receiver&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="30">Site Updates&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="7">StoreFront&nbsp;&nbsp;(14)</option>
+	<option class="level-1" value="18">&nbsp;&nbsp;&nbsp;StoreFront 1912 &#8211; 3.5&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="28">Unidesk&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="42">Virtual Apps and Desktops&nbsp;&nbsp;(8)</option>
+	<option class="level-0" value="11">VMware Horizon&nbsp;&nbsp;(29)</option>
+	<option class="level-1" value="20">&nbsp;&nbsp;&nbsp;VMware Horizon 7&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="41">Workspace app&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="10">XenApp/XenDesktop&nbsp;&nbsp;(56)</option>
+	<option class="level-1" value="26">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.11&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="27">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.12&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="29">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.13&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="34">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.14&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="35">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.15&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="37">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.16&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="38">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.17&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="40">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.18&nbsp;&nbsp;(3)</option>
+	<option class="level-1" value="17">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.7&nbsp;&nbsp;(3)</option>
+	<option class="level-1" value="19">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.8&nbsp;&nbsp;(6)</option>
+	<option class="level-1" value="22">&nbsp;&nbsp;&nbsp;XenApp/XenDesktop 7.9&nbsp;&nbsp;(7)</option>
+</select>
+</form>
+<script type="text/javascript">//<![CDATA[
+(function(){var dropdown=document.getElementById("cat");function onCatChange(){if(dropdown.options[dropdown.selectedIndex].value>0){dropdown.parentNode.submit();}}dropdown.onchange=onCatChange;})();
+//]]></script>
+
+			</aside><aside id="top-posts-2" class="widget widget_top-posts"><h2 class="widget-title">Top Posts &amp; Pages</h2><ul>				<li>
+					<a href="https://www.carlstalhood.com/" class="bump-view" data-bump-view="tp">Welcome! - and Change Log</a>					</li>
+								<li>
+					<a href="https://www.carlstalhood.com/citrix-profile-management/" class="bump-view" data-bump-view="tp">Citrix Profile Management 2006</a>					</li>
+								<li>
+					<a href="https://www.carlstalhood.com/vmware-unified-access-gateway/" class="bump-view" data-bump-view="tp">VMware Unified Access Gateway 3.9</a>					</li>
+								<li>
+					<a href="https://www.carlstalhood.com/workspace-app-for-windows/" class="bump-view" data-bump-view="tp">Citrix Workspace app 2006.1</a>					</li>
+								<li>
+					<a href="https://www.carlstalhood.com/workspace-environment-management/" class="bump-view" data-bump-view="tp">Workspace Environment Management (WEM) 2006</a>					</li>
+				</ul></aside><aside id="twitter_timeline-2" class="widget widget_twitter_timeline"><h2 class="widget-title">Follow me on Twitter</h2><a class="twitter-timeline" data-width="225" data-theme="light" data-border-color="#e8e8e8" data-tweet-limit="5" data-lang="EN" data-partner="jetpack" href="https://twitter.com/cstalhood" href="https://twitter.com/cstalhood">My Tweets</a></aside><aside id="blog_subscription-2" class="widget widget_blog_subscription jetpack_subscription_widget"><h2 class="widget-title">Subscribe to Blog via Email</h2>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-2">
+				                    <div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div>                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label" class="screen-reader-text" for="subscribe-field-blog_subscription-2">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" value="" id="subscribe-field-blog_subscription-2" placeholder="Email Address"/>
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe"/>
+                        <input type="hidden" name="source" value="https://www.carlstalhood.com/vmware-horizon-7-connection-server/"/>
+                        <input type="hidden" name="sub-type" value="widget"/>
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-2"/>
+						                        <button type="submit" name="jetpack_subscriptions_widget">
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</aside><aside id="rss_links-2" class="widget widget_rss_links"><h2 class="widget-title">RSS Feeds</h2><ul><li><a target="_self" href="https://www.carlstalhood.com/feed/" title="Subscribe to Posts">RSS - Posts</a></li><li><a target="_self" href="https://www.carlstalhood.com/comments/feed/" title="Subscribe to Comments">RSS - Comments</a></li></ul>
+</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-3285" class="post-3285 post type-post status-publish format-standard hentry category-vmware-horizon-7">
+	
+	<header class="entry-header">
+		<h1 class="entry-title">VMware Horizon 7.12 Connection Server</h1>			<p><a style="text-decoration: underline;" title="Changelog" href="https://www.carlstalhood.com/detailed-change-log/" target="_blank">Last Modified:</a> <span class="last-modified-timestamp">Jun 5, 2020 @ 5:40 am</span><p>
+							<div class="comments-link">
+					<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/#comments">138 Comments</a>				</div><!-- .comments-link -->
+				</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<h4>Navigation</h4>
+<p>This post applies to all VMware Horizon versions 7.0 and newer, including 7.12, 7.10.2 (ESB), and 7.5.4 (ESB).</p>
+<ul>
+<li><a href="#changelog">Change Log</a></li>
+<li><a href="#upgrade">Upgrade</a></li>
+<li><a href="#standardsvr">Install/Upgrade Standard Connection Server</a></li>
+<li><a href="#replicaserver">Install Replica Connection Server</a></li>
+<li><a href="#cert">Horizon Connection Server Certificate</a></li>
+<li>Horizon Portal:
+<ul>
+<li><a href="#portal">Client Installation Link</a></li>
+<li><a href="#portalbranding">Portal Branding</a></li>
+</ul>
+</li>
+<li>LDAP Edits
+<ul>
+<li><a href="#horizonconsoletimeout">Horizon Console Timeout</a></li>
+<li><a href="#savepwd">Mobile Client &#8211; Save Password</a></li>
+<li><a href="#touchid">Biometric Authentication &#8211; iOS Touch ID, iSO Face ID, Fingerprints, Windows Hello</a></li>
+<li><a href="#pooldelete">Disallow Non-empty Pool Deletion</a></li>
+</ul>
+</li>
+<li><a href="#loadbalancing">Load Balancing</a></li>
+<li><a href="#rdlicensing">Remote Desktop Licensing</a></li>
+<li><a href="#antivirus">Antivirus</a></li>
+<li><a href="#timingprofiler">Help Desk Tool &#8211; Timing Profiler</a></li>
+<li><a href="#toolbox">Horizon Toolbox 7.4</a>
+<ul>
+<li><a href="#toolboxdotnet">Toolbox &#8211; NET Framework 3.5</a></li>
+<li><a href="#toolboxinstall">Toolbox Installation</a></li>
+<li><a href="#toolboxfirewall">Toolbox &#8211; Firewall</a></li>
+<li><a href="#toolboxcertificate">Toolbox Certificate</a></li>
+<li><a href="#ra">Toolbox &#8211; Remote Assistance</a></li>
+</ul>
+</li>
+<li><a href="#logonmonitor">Logon Monitoring</a></li>
+</ul>
+<p>💡 = <a href="https://www.carlstalhood.com/detailed-change-log/" target="_blank" rel="noopener noreferrer">Recently Updated</a></p>
+<h3 id="changelog">Change Log</h3>
+<ul>
+<li>2020 Jun 5 &#8211; updated download links for <a href="https://my.vmware.com/group/vmware/details?productId=924&amp;rPId=36980&amp;downloadGroup=VIEW-7102-STD" target="_blank" rel="noopener noreferrer">Horizon 7.10.2 (ESB)</a></li>
+<li>2020 Mar 18 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-7120-STD&amp;productId=967&amp;rPId=43132" target="_blank" rel="noopener noreferrer">Horizon 7.12</a>.</li>
+<li>2019 Dec 25 &#8211; updated download links for <a href="https://my.vmware.com/group/vmware/info?slug=desktop_end_user_computing/vmware_horizon/7_10" target="_blank" rel="noopener noreferrer">Horizon 7.10.1 (ESB)</a>, and <a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon/7_5" target="_blank" rel="noopener noreferrer">Horizon 7.5.4 (ESB)</a></li>
+<li>2019 Dec 14 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-7100-STD&amp;productId=924&amp;rPId=36980" target="_blank" rel="noopener noreferrer">Horizon 7.11</a>.</li>
+<li>2019 Sep 26 &#8211; <a href="#horizonconsoletimeout" target="_blank" rel="noopener noreferrer">Horizon Console Timeout</a></li>
+<li>2019 Sep 17 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-7100-STD&amp;productId=924&amp;rPId=36980" target="_blank" rel="noopener noreferrer">Horizon 7.10</a>.</li>
+<li>2019 Jul 3 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/group/vmware/details?downloadGroup=VIEW-790-STD&amp;productId=896&amp;rPId=34484" target="_blank" rel="noopener noreferrer">Horizon 7.9</a>.</li>
+<li>2019 Mar 18 &#8211; <a href="#portal" target="_blank" rel="noopener noreferrer">Portal Client Install</a> &#8211; updated links for <a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/5_0" target="_blank" rel="noopener noreferrer">Clients 5.0</a></li>
+<li>2019 Mar 16 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-780-STD&amp;productId=859&amp;rPId=31118" target="_blank" rel="noopener noreferrer">Horizon 7.8</a></li>
+<li>2019 Mar 8 &#8211; updated <a href="#standardsvr">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-752-STD&amp;productId=757&amp;rPId=30743" target="_blank" rel="noopener noreferrer">Horizon 7.5.2</a> (ESB)</li>
+<li>2019 Jan 18 &#8211; <a href="#portalbranding" target="_blank" rel="noopener noreferrer">Portal Branding</a> &#8211; added link to Chris Tucker <a href="https://www.definetomorrow.co.uk/blog/2019/1/15/horizon-view-7x-branding-the-logon-pge" target="_blank" rel="noopener noreferrer">Horizon View 7.X &#8211; Branding the Logon page</a></li>
+<li>2018 Dec 15 &#8211; updated <a href="#standardsvr" target="_blank" rel="noopener noreferrer">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-770-STD&amp;productId=828&amp;rPId=29563" target="_blank" rel="noopener noreferrer">Horizon 7.7</a></li>
+<li>2018 Sep 8 &#8211; updated <a href="#standardsvr">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-760-STD&amp;productId=783&amp;rPId=25699" target="_blank" rel="noopener noreferrer">Horizon 7.6</a></li>
+<li>2018 July 21 &#8211; updated <a href="#standardsvr">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?productId=757&amp;rPId=23312&amp;downloadGroup=VIEW-751-STD" target="_blank" rel="noopener noreferrer">Horizon 7.5.1</a> (ESB)</li>
+<li>2018 June 8 &#8211; <a href="#standardsvr">Install Connection Server</a> &#8211; added link to VMware 52845 <a href="https://kb.vmware.com/s/article/52845" target="_blank" rel="noopener noreferrer">FAQ: Horizon 7, App Volumes, UEM Extended Service Branches (ESB)</a></li>
+<li>2018 June 2 &#8211; updated <a href="#standardsvr">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-750-STD&amp;productId=757&amp;rPId=24165" target="_blank" rel="noopener noreferrer">Horizon 7.5</a> (ESB)</li>
+<li>2018 Feb 3 &#8211; updated <a href="#touchid">Touch ID</a> section to include Windows Hello and VMware Docs links</li>
+<li>2018 Jan 21 &#8211; updated <a href="#toolboxinstall">Toolbox installation</a> section for Toolbox version 7.4, which supports Horizon 7.4</li>
+<li>2018 Jan 5 &#8211; updated <a href="#standardsvr">Install</a> sections for <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-740-STD&amp;productId=706&amp;rPId=20394" target="_blank" rel="noopener noreferrer">Horizon 7.4</a></li>
+<li>2017 Dec 15 &#8211; updated <a href="#toolboxinstall">Toolbox installation</a> section for version 7.3-20171130</li>
+</ul>
+<h2 id="upgrade">Upgrade</h2>
+<p>If you are performing a new install, skip to <a href="#standardsvr">Install Horizon 7 Standard Connection Server</a>.</p>
+<p>Notes regarding upgrades:</p>
+<ul>
+<li><strong>Upgrade all Connection Servers</strong> during the same maintenance window.
+<ul>
+<li>Downgrades are not permitted.
+<ul>
+<li>You can snapshot your Connection Servers before beginning the upgrade. To revert, shut down all Connection Servers, then revert to snapshots.</li>
+</ul>
+</li>
+<li>For <strong>Cloud Pod Architecture</strong>, you don&#8217;t have to upgrade every pod at once. But upgrade all of them as soon as possible.</li>
+<li>Horizon Agents cannot be upgraded until the Connection Servers are upgraded.</li>
+<li>All Connection Servers in the pod must be <strong>online</strong> before starting the upgrade.</li>
+<li>Upgrade <strong>Horizon Composer</strong> before upgrading the Connection Servers.</li>
+<li>It&#8217;s an in-place upgrade. Just run the Connection Server installer and click <strong>Next</strong> a couple times.
+<ul>
+<li>If upgrading from version 7.7 or older to version 7.8 or newer, then be aware of authentication changes.<br/>
+<img class="alignnone size-full wp-image-32964 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d112e8e824.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d112e8e824.png?w=402&amp;ssl=1 402w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d112e8e824.png?resize=300%2C143&amp;ssl=1 300w" sizes="(max-width: 402px) 100vw, 402px" data-recalc-dims="1"/></li>
+</ul>
+</li>
+<li>For <strong>Security Servers</strong>, in Horizon Administrator, go to paired Connection Server, <strong>More Commands &gt;</strong> <strong>Prepare for Upgrade or Reinstallation</strong>.</li>
+</ul>
+</li>
+<li>Upgrade the <strong>Horizon Group Policy template (.admx) files</strong>.</li>
+<li>Upgrade the <strong>Horizon Agents</strong>.
+<ul>
+<li>It&#8217;s an in-place upgrade.</li>
+<li>There&#8217;s no hurry. Upgrade the Horizon Agents when time permits.</li>
+</ul>
+</li>
+<li>Upgrade the <strong>Horizon Clients</strong>.
+<ul>
+<li>Horizon Clients can be upgraded anytime before the rest of the infrastructure is upgraded.</li>
+</ul>
+</li>
+</ul>
+<h2 id="standardsvr">Install Horizon 7 Standard Connection Server</h2>
+<p>The first Horizon Connection Server must be a Standard Server. Subsequent Horizon Connection Servers are Replicas. Once Horizon Connection Server is installed, there is no difference between them.</p>
+<p>A production Horizon Connection Server should have 10 GB of RAM and 4 vCPU.</p>
+<ul>
+<li>In Horizon 7.2 and newer, each Horizon Connection Server can handle 4,000 connections.</li>
+<li>In Horizon 7.1 and newer, each Horizon Connection Server can handle 2,000 connections.</li>
+</ul>
+<p><a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-7120-STD&amp;productId=967&amp;rPId=43132" target="_blank" rel="noopener noreferrer">Horizon 7.12</a> is the latest release.</p>
+<p><a href="https://my.vmware.com/group/vmware/details?productId=924&amp;rPId=36980&amp;downloadGroup=VIEW-7102-STD" target="_blank" rel="noopener noreferrer">Horizon 7.10.2</a> is an <a href="https://kb.vmware.com/s/article/52845" target="_blank" rel="noopener noreferrer">Extended Service Branch (ESB)</a>.</p>
+<ul>
+<li>ESBs will be released once a year.</li>
+<li>Once released, they will be actively supported for 24 months.</li>
+<li>During those 24 months, there will be 3 scheduled Service Pack updates, SP1 will be released 6 months after the initial release, SP2 will be released 3 months after SP1, and SP3 will be released 6 months after SP2.</li>
+<li>Service Packs do not include any new features.</li>
+<li>VMware 52845 <a href="https://kb.vmware.com/s/article/52845" target="_blank" rel="noopener noreferrer">FAQ: Horizon 7, App Volumes, UEM Extended Service Branches (ESB)</a></li>
+</ul>
+<p><a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon/7_5" target="_blank" rel="noopener noreferrer">Horizon 7.5.4</a>, Unified Access Gateway 3.3.1, <a href="https://my.vmware.com/web/vmware/details?downloadGroup=UEM-941&amp;productId=757&amp;rPId=40772" target="_blank" rel="noopener noreferrer">User Environment Management 9.4.1</a>, and <a href="https://my.vmware.com/web/vmware/details?downloadGroup=AV-2148&amp;productId=757&amp;rPId=40772" target="_blank" rel="noopener noreferrer">App Volumes 2.14.8</a>, are also Extended Service Branch (ESB).</p>
+<ul>
+<li>The 7.5.4 download page only has Agents. To see the rest of the files, use the <strong>Select Version</strong> drop-down to choose 7.5.3.<br/>
+<img class="alignnone size-full wp-image-39085 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=434&amp;ssl=1 434w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?resize=300%2C229&amp;ssl=1 300w" sizes="(max-width: 434px) 100vw, 434px" data-recalc-dims="1"/></li>
+</ul>
+<p>To install the first Horizon Connection Server:</p>
+<ol>
+<li>Ensure the Horizon Connection Server has 10 GB of RAM and 4 vCPU. Source = <a href="https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-installation/GUID-332CFB83-784A-4578-9354-888C0538909A.html" target="_blank" rel="noopener noreferrer">Hardware Requirements for View Connection Server</a> at VMware Docs.</li>
+<li><strong>Windows Server 2019</strong> is supported with Horizon Connection Server 7.8 and newer.</li>
+<li><strong>Windows Server 2016</strong> is supported with Horizon Connection Server 7.1 and newer.</li>
+<li>Horizon Composer cannot be installed on the Horizon Connection Server, and vice versa.</li>
+<li>Horizon Administrator is a Flash-based console. Chrome browser includes Flash.
+<ul>
+<li>Horizon Console (<strong>/newadmin</strong>) is HTML5 and does not need Flash. Horizon 7.10&#8217;s Horizon Console is almost feature complete.</li>
+</ul>
+</li>
+<li>Download <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-7120-STD&amp;productId=967&amp;rPId=43132" target="_blank" rel="noopener noreferrer">Horizon 7.12.0 View Connection Server</a>, <a href="https://my.vmware.com/group/vmware/details?productId=924&amp;rPId=36980&amp;downloadGroup=VIEW-7102-STD" target="_blank" rel="noopener noreferrer">Horizon 7.10.2 (ESB) View Connection Server</a>, or <a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon/7_5" target="_blank" rel="noopener noreferrer">Horizon 7.5.3 (ESB) View Connection Server</a>.<br/>
+<img class="alignnone size-full wp-image-39432 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223811b9cb.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223811b9cb.png?w=437&amp;ssl=1 437w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223811b9cb.png?resize=300%2C130&amp;ssl=1 300w" sizes="(max-width: 437px) 100vw, 437px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-40512 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20209fc1f.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20209fc1f.png?w=552&amp;ssl=1 552w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20209fc1f.png?resize=300%2C110&amp;ssl=1 300w" sizes="(max-width: 552px) 100vw, 552px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-39087 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03524f4b131.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03524f4b131.png?w=494&amp;ssl=1 494w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03524f4b131.png?resize=300%2C122&amp;ssl=1 300w" sizes="(max-width: 494px) 100vw, 494px" data-recalc-dims="1"/></p>
+<ul>
+<li>The Horizon 7.5.4 download page only has Agents. To see the rest of the files, use the <strong>Select Version</strong> drop-down to choose 7.5.3.<br/>
+<img class="alignnone size-full wp-image-39085 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=434&amp;ssl=1 434w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?resize=300%2C229&amp;ssl=1 300w" sizes="(max-width: 434px) 100vw, 434px" data-recalc-dims="1"/></li>
+</ul>
+</li>
+<li>If Horizon Toolbox is installed, uninstall it. You&#8217;ll have to <a href="#toolbox">reinstall</a> it later, including configuring the SSL certificate again (back up the certificate before uninstalling). Note: the Horizon Toolbox developers have not been updating Horizon Toolbox for newer versions of Horizon Connection Server.<br/>
+<img class="alignnone size-full wp-image-21286 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6483a0b4c69.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6483a0b4c69.png?w=594&amp;ssl=1 594w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6483a0b4c69.png?resize=300%2C193&amp;ssl=1 300w" sizes="(max-width: 594px) 100vw, 594px" data-recalc-dims="1"/></li>
+<li>Run the downloaded <strong>VMware-Horizon-Connection-Server-x86_64-7.12.0.exe</strong>, <strong>VMware-Horizon-Connection-Server-x86_64-7.10.2.exe</strong> or <strong>VMware-viewconnectionserver-x86_64-7.5.3.exe</strong> (ESB).<br/>
+<img class="alignnone size-full wp-image-39433 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223cda8d24.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223cda8d24.png?w=646&amp;ssl=1 646w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7223cda8d24.png?resize=300%2C121&amp;ssl=1 300w" sizes="(max-width: 646px) 100vw, 646px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-40513 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda204f85258.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda204f85258.png?w=591&amp;ssl=1 591w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda204f85258.png?resize=300%2C123&amp;ssl=1 300w" sizes="(max-width: 591px) 100vw, 591px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-39091 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353bb41302.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353bb41302.png?w=572&amp;ssl=1 572w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353bb41302.png?resize=300%2C133&amp;ssl=1 300w" sizes="(max-width: 572px) 100vw, 572px" data-recalc-dims="1"/></li>
+<li>In the <em>Welcome to the Installation Wizard for VMware Horizon 7 Connection Server</em> page, click<strong> Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10693 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce709a13490.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce709a13490.png?w=500&amp;ssl=1 500w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce709a13490.png?resize=300%2C91&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>If you are upgrading from version 7.7 or older to version 7.8 or newer, then acknowledge the authentication changes warning by clicking <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-32965 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d1166a0ebf.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d1166a0ebf.png?w=402&amp;ssl=1 402w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c8d1166a0ebf.png?resize=300%2C143&amp;ssl=1 300w" sizes="(max-width: 402px) 100vw, 402px" data-recalc-dims="1"/></li>
+<li>In the <em>License Agreement</em> page, select <strong>I accept the terms</strong>, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10694 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70a86dab3.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70a86dab3.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70a86dab3.png?resize=300%2C200&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Destination Folder</em> page, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10695 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70b6ccf19.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70b6ccf19.png?w=500&amp;ssl=1 500w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70b6ccf19.png?resize=300%2C105&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Installation Options</em> page, select <strong>Horizon 7 Standard Server</strong>, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10696 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70c499e84.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70c499e84.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70c499e84.png?resize=300%2C184&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Data Recovery</em> page, enter a password, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10697 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70da0b6ca.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70da0b6ca.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce70da0b6ca.png?resize=300%2C184&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Firewall Configuration</em> page, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10698 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce710389528.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce710389528.png?w=500&amp;ssl=1 500w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce710389528.png?resize=300%2C160&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Initial Horizon 7 Administrators</em> page, enter an AD group containing your Horizon administrators, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10699 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7117b46bb.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7117b46bb.png?w=500&amp;ssl=1 500w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7117b46bb.png?resize=300%2C194&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>User Experience Improvement Program</em> page, uncheck the box, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-18912 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59c66ea9f2938.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59c66ea9f2938.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59c66ea9f2938.png?resize=300%2C229&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Ready to Install the Program</em> page, click <strong>Install</strong>.<br/>
+<img class="alignnone size-full wp-image-10701 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce713a1d4c9.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce713a1d4c9.png?w=500&amp;ssl=1 500w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce713a1d4c9.png?resize=300%2C136&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Installer Completed</em> page, uncheck the box next to <strong>Show the readme file</strong>, and click <strong>Finish</strong>.<br/>
+<img class="alignnone size-full wp-image-10702 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce71da52517.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce71da52517.png?w=500&amp;ssl=1 500w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce71da52517.png?resize=300%2C137&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>If you upgraded to Horizon 7.8 or newer and want to re-enable <strong>Logon as current user</strong>:
+<ol>
+<li>In Horizon Console 7.10 or newer, on the left, expand <strong>Settings</strong> and click <strong>Servers</strong>. Or in Horizon Administrator, on the left, go to <strong>View Configuration</strong> &gt; <strong>Servers</strong>.<br/>
+<img class="alignnone size-full wp-image-37663 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c773a1539.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c773a1539.png?w=257&amp;ssl=1 257w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c773a1539.png?resize=196%2C300&amp;ssl=1 196w" sizes="(max-width: 257px) 100vw, 257px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37662 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c766db11f.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c766db11f.png?w=345&amp;ssl=1 345w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c766db11f.png?resize=203%2C300&amp;ssl=1 203w" sizes="(max-width: 345px) 100vw, 345px" data-recalc-dims="1"/></li>
+<li>On the right, switch to the tab named <strong>Connection Servers</strong>.</li>
+<li>Highlight the server you just upgraded and click <strong>Edit</strong>.<br/>
+<img class="alignnone size-full wp-image-37664 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7b3eec5a.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7b3eec5a.png?w=570&amp;ssl=1 570w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7b3eec5a.png?resize=300%2C187&amp;ssl=1 300w" sizes="(max-width: 570px) 100vw, 570px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37665 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7c325586.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7c325586.png?w=532&amp;ssl=1 532w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7c325586.png?resize=300%2C102&amp;ssl=1 300w" sizes="(max-width: 532px) 100vw, 532px" data-recalc-dims="1"/></li>
+<li>Switch to the tab named <strong>Authentication</strong>.<br/>
+<img class="alignnone size-full wp-image-37666 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7e2e7aad.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7e2e7aad.png?w=657&amp;ssl=1 657w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7e2e7aad.png?resize=300%2C86&amp;ssl=1 300w" sizes="(max-width: 657px) 100vw, 657px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37667 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7f563235.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7f563235.png?w=340&amp;ssl=1 340w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c7f563235.png?resize=300%2C82&amp;ssl=1 300w" sizes="(max-width: 340px) 100vw, 340px" data-recalc-dims="1"/></li>
+<li>Scroll down, check the box next to <strong>Accept logon as current user</strong> and then click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-37668 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c80ebab27.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c80ebab27.png?w=685&amp;ssl=1 685w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c80ebab27.png?resize=300%2C187&amp;ssl=1 300w" sizes="(max-width: 685px) 100vw, 685px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37669 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8241c45f.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8241c45f.png?w=491&amp;ssl=1 491w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8241c45f.png?resize=300%2C271&amp;ssl=1 300w" sizes="(max-width: 491px) 100vw, 491px" data-recalc-dims="1"/></li>
+</ol>
+</li>
+<li>If you upgraded to Horizon 7.8 or newer and want to re-enable sending the domain list to Horizon Client:
+<ol>
+<li>In Horizon Console 7.10 or newer, on the left, expand <strong>Settings</strong> and click <strong>Global Settings</strong>. Or in Horizon Administrator, on the left, go to <strong>View Configuration</strong> &gt; <strong>Global Settings</strong>.</li>
+<li>On the right, in the <strong>General</strong> section, click the <strong>Edit</strong> button.<br/>
+<img class="alignnone size-full wp-image-37670 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c872cfd93.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c872cfd93.png?w=655&amp;ssl=1 655w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c872cfd93.png?resize=300%2C245&amp;ssl=1 300w" sizes="(max-width: 655px) 100vw, 655px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37671 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8a7569f3.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8a7569f3.png?w=515&amp;ssl=1 515w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8a7569f3.png?resize=150%2C150&amp;ssl=1 150w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8a7569f3.png?resize=300%2C300&amp;ssl=1 300w" sizes="(max-width: 515px) 100vw, 515px" data-recalc-dims="1"/></li>
+<li>Near the bottom, check the box next to <strong>Send domain list</strong>. You might want to uncheck <strong>Hide domain list in client user interface</strong>. Then click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-37672 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8c47f599.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8c47f599.png?w=597&amp;ssl=1 597w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8c47f599.png?resize=254%2C300&amp;ssl=1 254w" sizes="(max-width: 597px) 100vw, 597px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-37673 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8ddeb236.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8ddeb236.png?w=640&amp;ssl=1 640w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88c8ddeb236.png?resize=242%2C300&amp;ssl=1 242w" sizes="(max-width: 640px) 100vw, 640px" data-recalc-dims="1"/></li>
+</ol>
+</li>
+</ol>
+<h3 id="replicaserver">Install Horizon 7 Replica Connection Server</h3>
+<p>Additional internal Horizon Connection Servers are installed as Replicas. After installation, there is no difference between a Replica server and a Standard server.</p>
+<p>A production Horizon Connection Server should have 10 GB of RAM and 4 vCPU.</p>
+<ul>
+<li>In Horizon 7.2 and newer, each Horizon Connection Server can handle 4,000 connections.</li>
+<li>In Horizon 7.1 and newer, each Horizon Connection Server can handle 2,000 connections.</li>
+</ul>
+<p>To install Horizon Connection Server Replica:</p>
+<ol>
+<li>Ensure the Horizon Connection Server has 10 GB of RAM and 4 vCPU.</li>
+<li><strong>Windows Server 2019</strong> is supported with Horizon Connection Server 7.8 and newer.</li>
+<li><strong>Windows Server 2016</strong> is supported with Horizon Connection Server 7.1 and newer.</li>
+<li>Download <a href="https://my.vmware.com/web/vmware/details?downloadGroup=VIEW-7120-STD&amp;productId=967&amp;rPId=43132" target="_blank" rel="noopener noreferrer">Horizon 7.12.0 View Connection Server</a>, <a href="https://my.vmware.com/group/vmware/info?slug=desktop_end_user_computing/vmware_horizon/7_10" target="_blank" rel="noopener noreferrer">Horizon 7.10.2 (ESB) View Connection Server</a>, or <a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon/7_5" target="_blank" rel="noopener noreferrer">Horizon 7.5.3 (ESB) View Connection Server</a>.<br/>
+<img class="alignnone size-full wp-image-39434 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7226862cd7f.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7226862cd7f.png?w=435&amp;ssl=1 435w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e7226862cd7f.png?resize=300%2C126&amp;ssl=1 300w" sizes="(max-width: 435px) 100vw, 435px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-40516 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda207ad4977.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda207ad4977.png?w=561&amp;ssl=1 561w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda207ad4977.png?resize=300%2C118&amp;ssl=1 300w" sizes="(max-width: 561px) 100vw, 561px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-32890 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c828c9245b99.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c828c9245b99.png?w=463&amp;ssl=1 463w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c828c9245b99.png?resize=300%2C111&amp;ssl=1 300w" sizes="(max-width: 463px) 100vw, 463px" data-recalc-dims="1"/></p>
+<ul>
+<li>The 7.5.4 download page only has Agents. To see the rest of the files, use the <strong>Select Version</strong> drop-down to choose 7.5.3.<br/>
+<img class="alignnone size-full wp-image-39085 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?w=434&amp;ssl=1 434w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e03512bd40cf.png?resize=300%2C229&amp;ssl=1 300w" sizes="(max-width: 434px) 100vw, 434px" data-recalc-dims="1"/></li>
+</ul>
+</li>
+<li>Run the downloaded <strong>VMware-Horizon-Connection-Server-x86_64-7.12.0.exe</strong>, <strong>VMware-Horizon-Connection-Server-x86_64-7.10.2.exe</strong> or <strong>VMware-viewconnectionserver-x86_64-7.5.3.exe</strong> (ESB)<br/>
+<img class="alignnone size-full wp-image-39435 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e72269c61535.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e72269c61535.png?w=627&amp;ssl=1 627w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2020/03/img_5e72269c61535.png?resize=300%2C124&amp;ssl=1 300w" sizes="(max-width: 627px) 100vw, 627px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-40515 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20660ae31.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20660ae31.png?w=591&amp;ssl=1 591w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2020/06/img_5eda20660ae31.png?resize=300%2C123&amp;ssl=1 300w" sizes="(max-width: 591px) 100vw, 591px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-39092 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353c41c7ac.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353c41c7ac.png?w=572&amp;ssl=1 572w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/12/img_5e0353c41c7ac.png?resize=300%2C133&amp;ssl=1 300w" sizes="(max-width: 572px) 100vw, 572px" data-recalc-dims="1"/></li>
+<li>In the <em>Welcome to the Installation Wizard for VMware Horizon 7 Connection Server</em> page, click<strong> Next</strong>.</li>
+<li>In the <em>License Agreement</em> page, select <strong>I accept the terms</strong>, and click <strong>Next</strong>.</li>
+<li>In the <em>Destination Folder</em> page, click <strong>Next</strong>.</li>
+<li>In the <em>Installation Options</em> page, select <strong>Horizon 7 Replica Server</strong>, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10713 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce762c9aa15.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce762c9aa15.png?w=500&amp;ssl=1 500w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce762c9aa15.png?resize=300%2C179&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Source Server</em> page, enter the name of another Horizon Connection Server in the group. Then click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10714 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7644d70f4.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7644d70f4.png?w=500&amp;ssl=1 500w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7644d70f4.png?resize=300%2C164&amp;ssl=1 300w" sizes="(max-width: 500px) 100vw, 500px" data-recalc-dims="1"/></li>
+<li>In the <em>Firewall Configuration</em> page, click <strong>Next</strong>.</li>
+<li>In the <em>Ready to Install the Program</em> page, click <strong>Install</strong>.</li>
+<li>In the <em>Installer Completed</em> page, click <strong>Finish</strong>.</li>
+<li><a href="https://www.carlstalhood.com/horizon-view-load-balancing-netscaler-11-1/" target="_blank" rel="noopener noreferrer">Load balance</a> your multiple Horizon Connection Servers.</li>
+</ol>
+<h2 id="cert">Horizon Connection Server Certificate</h2>
+<ol>
+<li>Run <strong>certlm.msc</strong> (Windows 2012+). Or run <strong>mmc</strong>, add the <strong>Certificates</strong> snap-in, and point it to <strong>Computer &gt; Local Machine</strong>.</li>
+<li>Request a new certificate with a common name that matches the FQDN of the Connection Server, or import a wildcard certificate.<br/>
+<img class="alignnone size-full wp-image-10703 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce72f8d47fc.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce72f8d47fc.png?w=495&amp;ssl=1 495w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce72f8d47fc.png?resize=300%2C140&amp;ssl=1 300w" sizes="(max-width: 495px) 100vw, 495px" data-recalc-dims="1"/></li>
+<li>Note: the private key must be exportable. If using the <strong>Computer</strong> template, click <strong>Details</strong>, and then click<strong> Properties</strong>.<br/>
+<img class="alignnone size-full wp-image-10704 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7334bc600.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7334bc600.png?w=629&amp;ssl=1 629w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7334bc600.png?resize=300%2C195&amp;ssl=1 300w" sizes="(max-width: 629px) 100vw, 629px" data-recalc-dims="1"/></li>
+<li>On the <strong>Private Key</strong> tab, click <strong>Key options</strong> to expand it, and check the box next to <strong>Mark private key as exportable</strong>.<br/>
+<img class="alignnone size-full wp-image-10705 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73502d6e5.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73502d6e5.png?w=502&amp;ssl=1 502w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73502d6e5.png?resize=300%2C227&amp;ssl=1 300w" sizes="(max-width: 502px) 100vw, 502px" data-recalc-dims="1"/></li>
+<li>In the list of certificates, look for the one that is self-signed. The Issuer will be the local computer name instead of a Certificate Authority. Right-click it, and click <strong>Properties</strong>.<br/>
+<img class="alignnone size-full wp-image-10706 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7378265c2.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7378265c2.png?w=585&amp;ssl=1 585w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7378265c2.png?resize=300%2C183&amp;ssl=1 300w" sizes="(max-width: 585px) 100vw, 585px" data-recalc-dims="1"/></li>
+<li>On the <strong>General</strong> tab, clear the <em>Friendly name</em> field, and click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-10707 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7392beb4a.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7392beb4a.png?w=405&amp;ssl=1 405w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7392beb4a.png?resize=300%2C164&amp;ssl=1 300w" sizes="(max-width: 405px) 100vw, 405px" data-recalc-dims="1"/></li>
+<li>Right-click your Certificate Authority-signed certificate, and try to export it.<br/>
+<img class="alignnone size-full wp-image-10709 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73d7deecd.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73d7deecd.png?w=636&amp;ssl=1 636w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73d7deecd.png?resize=300%2C165&amp;ssl=1 300w" sizes="(max-width: 636px) 100vw, 636px" data-recalc-dims="1"/></li>
+<li>On the <em>Export Private Key</em> page, make sure <strong>Yes, export the private key</strong> is selectable. If the option to export the private key is grayed out, then this certificate will not work. Click <strong>Cancel</strong>.<br/>
+<img class="alignnone size-full wp-image-10710 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73ee7bc0e.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73ee7bc0e.png?w=535&amp;ssl=1 535w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73ee7bc0e.png?resize=300%2C162&amp;ssl=1 300w" sizes="(max-width: 535px) 100vw, 535px" data-recalc-dims="1"/></li>
+<li>Right-click your Certificate Authority-signed certificate, and click <strong>Properties</strong>.<br/>
+<img class="alignnone size-full wp-image-10708 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73aaa80d3.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73aaa80d3.png?w=513&amp;ssl=1 513w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce73aaa80d3.png?resize=300%2C189&amp;ssl=1 300w" sizes="(max-width: 513px) 100vw, 513px" data-recalc-dims="1"/></li>
+<li>On the <strong>General</strong> tab, in the <em>Friendly name</em> field, enter the text <strong>vdm</strong>, and click <strong>OK</strong>. Note: only one certificate can have <strong>vdm</strong> as the Friendly name.<br/>
+<img class="alignnone size-full wp-image-10711 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce74313c90d.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce74313c90d.png?w=405&amp;ssl=1 405w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce74313c90d.png?resize=300%2C130&amp;ssl=1 300w" sizes="(max-width: 405px) 100vw, 405px" data-recalc-dims="1"/></li>
+<li>Then restart the <strong>VMware Horizon View Connection Server</strong> service. It will take several seconds before you can connect to Horizon View Administrator.<br/>
+<img class="alignnone size-full wp-image-10712 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7458db962.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7458db962.png?w=553&amp;ssl=1 553w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7458db962.png?resize=300%2C178&amp;ssl=1 300w" sizes="(max-width: 553px) 100vw, 553px" data-recalc-dims="1"/></li>
+</ol>
+<h2 id="portal">Horizon Portal – Client Installation Link</h2>
+<p>If you point your browser to the Horizon Connection Server (without /admin in the path), the <strong>Install VMware Horizon Client</strong> link redirects to the VMware.com site for downloading of Horizon Clients. You can change it so that the Horizon Clients can be downloaded directly from the Horizon Connection Server.<br/>
+<img class="alignnone size-full wp-image-33108 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c90000dd665b.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c90000dd665b.png?w=529&amp;ssl=1 529w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/03/img_5c90000dd665b.png?resize=261%2C300&amp;ssl=1 261w" sizes="(max-width: 529px) 100vw, 529px" data-recalc-dims="1"/></p>
+<ol>
+<li>On the Horizon Connection Server, go to <strong>C:\Program Files\VMware\VMware View\Server\broker\webapps</strong>.</li>
+<li>Create a new folder called <strong>downloads</strong>.<br/>
+<img class="alignnone size-full wp-image-10716 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce79b170fa2.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce79b170fa2.png?w=752&amp;ssl=1 752w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce79b170fa2.png?resize=300%2C101&amp;ssl=1 300w" sizes="(max-width: 752px) 100vw, 752px" data-recalc-dims="1"/></li>
+<li>Copy the <a href="https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_horizon_clients/5_0" target="_blank" rel="noopener noreferrer">downloaded Horizon Client 5.2 for Windows</a> to the new <strong>C:\Program Files\VMware\VMware View\Server\broker\webapps</strong><strong>\downloads</strong> folder.<br/>
+<img class="alignnone size-full wp-image-37674 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cab690f02.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cab690f02.png?w=823&amp;ssl=1 823w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cab690f02.png?resize=300%2C59&amp;ssl=1 300w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cab690f02.png?resize=768%2C150&amp;ssl=1 768w" sizes="(max-width: 823px) 100vw, 823px" data-recalc-dims="1"/></li>
+<li>Run Notepad as administrator.<br/>
+<img class="alignnone size-full wp-image-10719 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a586a629.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a586a629.png?w=366&amp;ssl=1 366w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a586a629.png?resize=300%2C136&amp;ssl=1 300w" sizes="(max-width: 366px) 100vw, 366px" data-recalc-dims="1"/></li>
+<li>Open the file <strong>C:\ProgramData\VMware\VDM\portal\portal-links-html-access.properties</strong> file with a text editor (as Administrator).<br/>
+<img class="alignnone size-full wp-image-10720 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a7f8992d.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a7f8992d.png?w=593&amp;ssl=1 593w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7a7f8992d.png?resize=300%2C127&amp;ssl=1 300w" sizes="(max-width: 593px) 100vw, 593px" data-recalc-dims="1"/></li>
+<li>Go back to the <strong>downloads</strong> folder, and copy the Horizon Client filename.<br/>
+<img class="alignnone size-full wp-image-37675 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88caf84bc05.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88caf84bc05.png?w=561&amp;ssl=1 561w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88caf84bc05.png?resize=300%2C128&amp;ssl=1 300w" sizes="(max-width: 561px) 100vw, 561px" data-recalc-dims="1"/></li>
+<li>In Notepad, modify <strong>link</strong>.<strong>win32</strong> and <strong>link.</strong><strong>win64</strong> by specifying the relative path to the Horizon Client executable under <strong>/downloads</strong>. Note: In Horizon Client 4.3 and newer, there&#8217;s only one Horizon client for both 32-bit and 64-bit. The following example shows a link for the Horizon win64 client.
+<pre>link.win64=/downloads/VMware-Horizon-Client-5.2.0-14570289.exe</pre>
+</li>
+<li>Then <strong>Save</strong> the file.<br/>
+<img class="alignnone size-full wp-image-37676 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cb1b9c110.png?w=1100&#038;ssl=1" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cb1b9c110.png?w=684&amp;ssl=1 684w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88cb1b9c110.png?resize=300%2C138&amp;ssl=1 300w" sizes="(max-width: 684px) 100vw, 684px" data-recalc-dims="1"/></li>
+<li>Restart the <strong>VMware Horizon View Web Component</strong> service, or restart the entire Connection Server.<br/>
+<img class="alignnone size-full wp-image-10725 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7c20a5b3d.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7c20a5b3d.png?w=541&amp;ssl=1 541w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7c20a5b3d.png?resize=300%2C243&amp;ssl=1 300w" sizes="(max-width: 541px) 100vw, 541px" data-recalc-dims="1"/></li>
+<li>It will take a few seconds for the <strong>ws_TomcatService</strong> process to start so be patient. If you get a 503 error, then the service is not done starting.<br/>
+<img class="alignnone size-full wp-image-10727 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7cea3ce22.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7cea3ce22.png?w=468&amp;ssl=1 468w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7cea3ce22.png?resize=300%2C115&amp;ssl=1 300w" sizes="(max-width: 468px) 100vw, 468px" data-recalc-dims="1"/></li>
+<li>Now when you click the link to download the client, it will grab the file directly from the Horizon Connection Server.<br/>
+<img class="alignnone size-full wp-image-37677 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88d1399e443.png?w=1100&#038;ssl=1" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88d1399e443.png?w=737&amp;ssl=1 737w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d88d1399e443.png?resize=300%2C295&amp;ssl=1 300w" sizes="(max-width: 737px) 100vw, 737px" data-recalc-dims="1"/></li>
+<li>Repeat these steps on each Connection Server.</li>
+</ol>
+<h3 id="portalbranding">Portal Branding</h3>
+<p>Chris Tucker at <a href="https://www.definetomorrow.co.uk/blog/2019/1/15/horizon-view-7x-branding-the-logon-pge" target="_blank" rel="noopener noreferrer">Horizon View 7.X &#8211; Branding the Logon page</a> details how to brand the Horizon 7.1 and newer portal page.<br/>
+<img class="alignnone size-full wp-image-32482 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/01/img_5c41cc4db8dbb.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/01/img_5c41cc4db8dbb.png?w=773&amp;ssl=1 773w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/01/img_5c41cc4db8dbb.png?resize=300%2C256&amp;ssl=1 300w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2019/01/img_5c41cc4db8dbb.png?resize=768%2C656&amp;ssl=1 768w" sizes="(max-width: 773px) 100vw, 773px" data-recalc-dims="1"/></p>
+<h2>LDAP Edits</h2>
+<h3 id="horizonconsoletimeout">Horizon Console Timeout</h3>
+<p>The HTML5 Horizon Console (https://MyConnectionServer<strong>/newadmin</strong>) has a default timeout of 10 minutes. Changing the Horizon Administrator timeout will not affect the Horizon Console timeout. You can use <strong>adsiedit.msc</strong> to increase the Horizon Console timeout.</p>
+<ol>
+<li>On the Horizon Connection Server, run <strong>ADSI Edit</strong>.<br/>
+<img class="alignnone size-full wp-image-10728 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?w=311&amp;ssl=1 311w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?resize=300%2C129&amp;ssl=1 300w" sizes="(max-width: 311px) 100vw, 311px" data-recalc-dims="1"/></li>
+<li>Right-click <strong>ADSI Edit</strong>, and click <strong>Connect to</strong>.<br/>
+<img class="alignnone size-full wp-image-10729 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?w=345&amp;ssl=1 345w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?resize=300%2C189&amp;ssl=1 300w" sizes="(max-width: 345px) 100vw, 345px" data-recalc-dims="1"/></li>
+<li>Change the first selection to <strong>Select or type a Distinguished Name</strong>, and enter <strong>dc=vdi,dc=vmware,dc=int.</strong></li>
+<li>Change the second selection to <strong>Select or type a domain or server</strong>, and enter <strong>localhost</strong>. Click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-10730 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?w=380&amp;ssl=1 380w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?resize=295%2C300&amp;ssl=1 295w" sizes="(max-width: 380px) 100vw, 380px" data-recalc-dims="1"/></li>
+<li>Navigate to <strong>Properties &gt; Global</strong>. On the right, double-click <strong>CN=Common</strong>.<br/>
+<img class="alignnone size-full wp-image-10731 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=510&amp;ssl=1 510w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?resize=300%2C294&amp;ssl=1 300w" sizes="(max-width: 510px) 100vw, 510px" data-recalc-dims="1"/></li>
+<li>Scroll down, click to highlight <strong>pae-APISessionTimeout</strong>, and click <strong>Edit</strong>.<br/>
+<img class="alignnone size-full wp-image-37760 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f2240d47.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f2240d47.png?w=400&amp;ssl=1 400w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f2240d47.png?resize=286%2C300&amp;ssl=1 286w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1"/></li>
+<li>Enter a value in minutes. Click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-37759 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f1241b08.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f1241b08.png?w=409&amp;ssl=1 409w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/09/img_5d8d0f1241b08.png?resize=300%2C107&amp;ssl=1 300w" sizes="(max-width: 409px) 100vw, 409px" data-recalc-dims="1"/></li>
+</ol>
+<h3 id="savepwd">Mobile Client &#8211; Save Password</h3>
+<p>If desired, you can configure Horizon Connection Server to allow mobile clients (iOS, Android) to save user passwords.</p>
+<ol>
+<li>On the Horizon Connection Server, run <strong>ADSI Edit</strong>.<br/>
+<img class="alignnone size-full wp-image-10728 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?w=311&amp;ssl=1 311w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d1e94f62.png?resize=300%2C129&amp;ssl=1 300w" sizes="(max-width: 311px) 100vw, 311px" data-recalc-dims="1"/></li>
+<li>Right-click <strong>ADSI Edit</strong>, and click <strong>Connect to</strong>.<br/>
+<img class="alignnone size-full wp-image-10729 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?w=345&amp;ssl=1 345w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d3ebfcb2.png?resize=300%2C189&amp;ssl=1 300w" sizes="(max-width: 345px) 100vw, 345px" data-recalc-dims="1"/></li>
+<li>Change the first selection to <strong>Select or type a Distinguished Name</strong>, and enter <strong>dc=vdi,dc=vmware,dc=int.</strong></li>
+<li>Change the second selection to <strong>Select or type a domain or server</strong>, and enter <strong>localhost</strong>. Click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-10730 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?w=380&amp;ssl=1 380w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7d91bc4f8.png?resize=295%2C300&amp;ssl=1 295w" sizes="(max-width: 380px) 100vw, 380px" data-recalc-dims="1"/></li>
+<li>Navigate to <strong>Properties &gt; Global</strong>. On the right, double-click <strong>CN=Common</strong>.<br/>
+<img class="alignnone size-full wp-image-10731 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=510&amp;ssl=1 510w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?resize=300%2C294&amp;ssl=1 300w" sizes="(max-width: 510px) 100vw, 510px" data-recalc-dims="1"/></li>
+<li>Scroll down, click to highlight <strong>pae-ClientCredentialCacheTimeout</strong>, and click <strong>Edit</strong>.<br/>
+<img class="alignnone size-full wp-image-10732 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7dded8bee.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7dded8bee.png?w=400&amp;ssl=1 400w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7dded8bee.png?resize=290%2C300&amp;ssl=1 290w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1"/></li>
+<li>Enter a value in minutes. 0 = no saving of credentials. -1 = no timeout. Click <strong>OK</strong>.<br/>
+<img class="alignnone size-full wp-image-10733 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7df00287e.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7df00287e.png?w=409&amp;ssl=1 409w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7df00287e.png?resize=300%2C107&amp;ssl=1 300w" sizes="(max-width: 409px) 100vw, 409px" data-recalc-dims="1"/></li>
+</ol>
+<h3 id="touchid">Biometric Authentication &#8211; iOS Touch ID, iOS Face ID, Fingerprints, Windows Hello</h3>
+<p>Biometric authentication, including <a href="https://docs.vmware.com/en/VMware-Horizon-Client-for-iOS/5.1/horizon-client-ios-installation/GUID-F1848930-0D37-484E-9A86-20FEDA7F62E3.html" target="_blank" rel="noopener noreferrer">Touch ID</a>, <a href="https://docs.vmware.com/en/VMware-Horizon-Client-for-iOS/5.1/horizon-client-ios-installation/GUID-30545D82-DA80-47FF-8CB2-AC87B4EBC16A.html" target="_blank" rel="noopener noreferrer">Face ID</a>, <a href="https://docs.vmware.com/en/VMware-Horizon-Client-for-Android/5.1/horizon-client-android-installation/GUID-434E1028-A9E7-462D-9FFD-9150A3F7DFFC.html" target="_blank" rel="noopener noreferrer">Fingerprints</a>, and <a href="https://docs.vmware.com/en/VMware-Horizon-Client-for-Windows-10-UWP/5.1/horizon-client-windows-10uwp-installation/GUID-7731C7B7-E8C8-4DFF-939F-4DA844D2F089.html" target="_blank" rel="noopener noreferrer">Windows Hello</a>, is disabled by default. To enable: (source = vDelboy &#8211; <a href="https://vdelboysview.com/2015/09/08/how-to-enable-touch-id-in-vmware-horizon-6-2/" target="_blank" rel="noopener noreferrer">How to Enable Touch ID in VMware Horizon 6.2</a> and <a href="https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-administration/GUID-02404EBB-0578-4046-93A6-D57CABA1A8F9.html" target="_blank" rel="noopener noreferrer">Configure Biometric Authentication</a> at VMware Docs)</p>
+<ol>
+<li>On the Horizon Connection Server, run <strong>ADSI Edit</strong>.</li>
+<li>Right-click <strong>ADSI Edit</strong> and click <strong>Connect to…</strong></li>
+<li>Change the first selection to <strong>Select or type a Distinguished Name</strong> and enter <strong>dc=vdi,dc=vmware,dc=int.</strong></li>
+<li>Change the second selection to <strong>Select or type a domain or server</strong> and enter <strong>localhost</strong>. Click <strong>OK</strong>.</li>
+<li>Navigate to <strong>Properties &gt; Global</strong>. On the right, double-click <strong>CN=Common</strong>.<br/>
+<img class="alignnone size-full wp-image-10731 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=510&amp;ssl=1 510w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?resize=300%2C294&amp;ssl=1 300w" sizes="(max-width: 510px) 100vw, 510px" data-recalc-dims="1"/></li>
+<li>Find the attribute <strong>pae-ClientConfig</strong> and double-click it.<br/>
+<img class="alignnone size-full wp-image-10734 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e2a8a9b5.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e2a8a9b5.png?w=400&amp;ssl=1 400w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e2a8a9b5.png?resize=300%2C219&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1"/></li>
+<li>Enter the line <strong><code>BioMetricsTimeout=-1</code></strong>, and click <strong>Add</strong>. Click <strong>OK</strong>. The change takes effect immediately.<br/>
+<img class="alignnone size-full wp-image-10735 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e4b8f8a9.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e4b8f8a9.png?w=362&amp;ssl=1 362w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e4b8f8a9.png?resize=300%2C153&amp;ssl=1 300w" sizes="(max-width: 362px) 100vw, 362px" data-recalc-dims="1"/></li>
+</ol>
+<h3 id="pooldelete">Disallow Non-empty Pool Deletion</h3>
+<p><a href="https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-virtual-desktops/GUID-2DB0386C-B71F-4E22-B249-6D3507AD6757.html" target="_blank" rel="noopener noreferrer">Configure View to Disallow the Deletion of a Desktop Pool That Contains Desktop Machines</a> at VMware Docs.</p>
+<ol>
+<li>On the Horizon Connection Server, run <strong>ADSI Edit</strong>.</li>
+<li>Right-click <strong>ADSI Edit</strong> and click <strong>Connect to…</strong></li>
+<li>Change the first selection to <strong>Select or type a Distinguished Name</strong> and enter <strong>dc=vdi,dc=vmware,dc=int.</strong></li>
+<li>Change the second selection to <strong>Select or type a domain or server</strong> and enter <strong>localhost</strong>. Click <strong>OK</strong>.</li>
+<li>Navigate to <strong>Properties &gt; Global</strong>. On the right, double-click <strong>CN=Common</strong>.<br/>
+<img class="alignnone size-full wp-image-10731 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?w=510&amp;ssl=1 510w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7db396670.png?resize=300%2C294&amp;ssl=1 300w" sizes="(max-width: 510px) 100vw, 510px" data-recalc-dims="1"/></li>
+<li>Find the attribute <code><strong>pae-NameValuePair</strong></code>, and double-click it.<br/>
+<img class="alignnone size-full wp-image-10736 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e6ebcadc.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e6ebcadc.png?w=400&amp;ssl=1 400w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7e6ebcadc.png?resize=300%2C204&amp;ssl=1 300w" sizes="(max-width: 400px) 100vw, 400px" data-recalc-dims="1"/></li>
+<li>Enter the line <strong><code>cs-disableNonEmptyPoolDelete=1</code></strong>, and click <strong>Add</strong>. Click <strong>OK</strong>. The change takes effect immediately.<br/>
+<img class="alignnone size-full wp-image-10737 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7ec1a5179.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7ec1a5179.png?w=362&amp;ssl=1 362w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7ec1a5179.png?resize=300%2C159&amp;ssl=1 300w" sizes="(max-width: 362px) 100vw, 362px" data-recalc-dims="1"/></li>
+</ol>
+<h2 id="loadbalancing">Load Balancing</h2>
+<p>See Carl Stalhood’s <a href="https://www.carlstalhood.com/vmware-horizon-unified-access-gateway-load-balancing-citrix-adc/" target="_blank" rel="noopener noreferrer">Horizon Load Balancing</a> using NetScaler 12.1.</p>
+<h2 id="rdlicensing">Remote Desktop Licensing</h2>
+<p>If you plan to build RDS Hosts, then install Remote Desktop Licensing somewhere. You can install it on your Horizon Connection Servers by following the procedure at <a href="https://www.carlstalhood.com/delivery-controller-7-15-ltsr-and-licensing/#rdlicensing" target="_blank" rel="noopener noreferrer">https://www.carlstalhood.com/delivery-controller-7-15-ltsr-and-licensing/#rdlicensing</a>.</p>
+<h2 id="antivirus">Antivirus</h2>
+<p>VMware Tech Paper <a href="https://www.vmware.com/techpapers/2016/antivirus-considerations-for-vmware-horizon-7-10532.html" target="_blank" rel="noopener noreferrer">Antivirus Considerations for VMware Horizon 7</a>: exclusions for Horizon View, App Volumes, User Environment Manager, ThinApp</p>
+<h2 id="timingprofiler">Help Desk Tool Timing Profiler</h2>
+<p>Horizon 7.2 and newer include a web-based Help Desk Tool. Run the following command to enable the <a href="https://docs.vmware.com/en/VMware-Horizon-7/7.9/horizon-administration/GUID-256CFA52-E742-4A3F-8F3E-6DE9CEDE5272.html" target="_blank" rel="noopener noreferrer"><strong>timing profiler</strong></a> on each Connection Server instance to view logon segments.</p>
+<pre>vdmadmin -I -timingProfiler -enable</pre>
+<p><img class="alignnone size-full wp-image-14523 " style="font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;" src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/06/img_594d09f963ba4.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/06/img_594d09f963ba4.png?w=473&amp;ssl=1 473w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/06/img_594d09f963ba4.png?resize=300%2C101&amp;ssl=1 300w" sizes="(max-width: 473px) 100vw, 473px" data-recalc-dims="1"/></p>
+<h2 id="toolbox">Horizon Toolbox 7.8.0</h2>
+<p>Note: this version of Horizon Toolbox might not support Horizon 7.9, 7.10, 7.11, or 7.12.</p>
+<p>Install the <a href="https://labs.vmware.com/flings/horizon-toolbox-2" target="_blank" rel="noopener noreferrer">Horizon Toolbox Fling</a> on your View Connection Servers. This is a web-based tool that adds the following functionality:</p>
+<ul>
+<li>Auditing of user sessions</li>
+<li>Auditing of virtual machine snapshots</li>
+<li>Auditing of Horizon Client Versions</li>
+<li>Remote Assistance – users request assistance from administrators</li>
+<li>Virtual Machine Remote Console</li>
+<li>Power Policies for Desktop Pools<br/>
+<img class="alignnone size-full wp-image-19743 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fe5abe5dd.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fe5abe5dd.png?w=715&amp;ssl=1 715w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fe5abe5dd.png?resize=300%2C244&amp;ssl=1 300w" sizes="(max-width: 715px) 100vw, 715px" data-recalc-dims="1"/></li>
+</ul>
+<p>To use the Toolbox, make sure the following are enabled in your View Connection Server pod:</p>
+<ul>
+<li>Events database</li>
+<li>Customer Experience Improvement Program</li>
+</ul>
+<h4 id="toolboxdotnet">.NET Framework 3.5 and Remote Assistance</h4>
+<ol>
+<li>On the Horizon View Connection Server, in Server Manager, click <strong>Add Roles and Features</strong>.<br/>
+<img class="alignnone size-full wp-image-10740 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f54516bd.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f54516bd.png?w=704&amp;ssl=1 704w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f54516bd.png?resize=300%2C131&amp;ssl=1 300w" sizes="(max-width: 704px) 100vw, 704px" data-recalc-dims="1"/></li>
+<li>In the <em>Features</em> page, expand <strong>.NET Framework 3.5 Features</strong>, and select <strong>.NET Framework 3.5</strong>.<br/>
+<img class="alignnone size-full wp-image-10741 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f72269b2.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f72269b2.png?w=555&amp;ssl=1 555w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7f72269b2.png?resize=300%2C154&amp;ssl=1 300w" sizes="(max-width: 555px) 100vw, 555px" data-recalc-dims="1"/></li>
+<li>Scroll down, select <strong>Remote Assistance</strong>, and click <strong>Next</strong>. This feature is only needed if you will respond to Remote Assistance requests directly from the Horizon View Connection Server.<br/>
+<img class="alignnone size-full wp-image-10742 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fad7272e.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fad7272e.png?w=550&amp;ssl=1 550w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fad7272e.png?resize=300%2C218&amp;ssl=1 300w" sizes="(max-width: 550px) 100vw, 550px" data-recalc-dims="1"/></li>
+<li>In the <em>Confirmation </em>page, click <strong>Specify an alternate source path</strong>.<br/>
+<img class="alignnone size-full wp-image-10743 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fbc7c76b.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fbc7c76b.png?w=639&amp;ssl=1 639w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fbc7c76b.png?resize=300%2C250&amp;ssl=1 300w" sizes="(max-width: 639px) 100vw, 639px" data-recalc-dims="1"/></li>
+<li>Mount or extract the Windows Server ISO.<br/>
+<img class="alignnone size-full wp-image-10744 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fe44b6d8.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fe44b6d8.png?w=484&amp;ssl=1 484w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce7fe44b6d8.png?resize=300%2C131&amp;ssl=1 300w" sizes="(max-width: 484px) 100vw, 484px" data-recalc-dims="1"/></li>
+<li>Enter the path to the <strong>sources</strong> folder on the Windows Server ISO, and click <strong>OK</strong>. Then click <strong>Install</strong>.<br/>
+<img class="alignnone size-full wp-image-10745 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce801347f61.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce801347f61.png?w=636&amp;ssl=1 636w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce801347f61.png?resize=300%2C238&amp;ssl=1 300w" sizes="(max-width: 636px) 100vw, 636px" data-recalc-dims="1"/></li>
+</ol>
+<h4 id="toolboxinstall">Toolbox Installer</h4>
+<ol>
+<li>Download the <a href="https://labs.vmware.com/flings/horizon-toolbox-2" target="_blank" rel="noopener noreferrer">Fling</a>. Check the box next to <strong>I have read and agree</strong>, and click <strong>Download</strong>.<br/>
+<img class="alignnone size-full wp-image-21280 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6480d2b9e3e.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6480d2b9e3e.png?w=330&amp;ssl=1 330w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6480d2b9e3e.png?resize=149%2C300&amp;ssl=1 149w" sizes="(max-width: 330px) 100vw, 330px" data-recalc-dims="1"/></li>
+<li>If upgrading, you&#8217;ll need to uninstall the old version first.<br/>
+<img class="alignnone size-full wp-image-19737 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fc8d79daf.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fc8d79daf.png?w=362&amp;ssl=1 362w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fc8d79daf.png?resize=300%2C194&amp;ssl=1 300w" sizes="(max-width: 362px) 100vw, 362px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-19738 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fca2bc280.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fca2bc280.png?w=570&amp;ssl=1 570w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fca2bc280.png?resize=300%2C191&amp;ssl=1 300w" sizes="(max-width: 570px) 100vw, 570px" data-recalc-dims="1"/></li>
+<li>Run the downloaded <strong>ToolBoxSetup.msi</strong>.<br/>
+<img class="alignnone size-full wp-image-36076 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/07/img_5d1cf19208b1a.png?w=1100&#038;ssl=1" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/07/img_5d1cf19208b1a.png?w=576&amp;ssl=1 576w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2019/07/img_5d1cf19208b1a.png?resize=300%2C88&amp;ssl=1 300w" sizes="(max-width: 576px) 100vw, 576px" data-recalc-dims="1"/></li>
+<li>In the <em>Welcome to the HorizonToolbox Setup Wizard</em> page, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-18658 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be877da7df8.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be877da7df8.png?w=499&amp;ssl=1 499w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be877da7df8.png?resize=300%2C246&amp;ssl=1 300w" sizes="(max-width: 499px) 100vw, 499px" data-recalc-dims="1"/></li>
+<li>In the <em>Select Installation Folder</em> page, select <strong>Everyone</strong>, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-18659 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be878c9c9ca.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be878c9c9ca.png?w=499&amp;ssl=1 499w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be878c9c9ca.png?resize=300%2C246&amp;ssl=1 300w" sizes="(max-width: 499px) 100vw, 499px" data-recalc-dims="1"/></li>
+<li>In the <em>BannerText</em> page, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10748 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce80e310d22.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce80e310d22.png?w=499&amp;ssl=1 499w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce80e310d22.png?resize=300%2C147&amp;ssl=1 300w" sizes="(max-width: 499px) 100vw, 499px" data-recalc-dims="1"/></li>
+<li>In the <em>Confirm Installation</em> page, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-18660 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87a3c203b.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87a3c203b.png?w=499&amp;ssl=1 499w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87a3c203b.png?resize=300%2C246&amp;ssl=1 300w" sizes="(max-width: 499px) 100vw, 499px" data-recalc-dims="1"/></li>
+<li>In the <em>Installation Complete</em> page, click <strong>Close</strong>.<br/>
+<img class="alignnone size-full wp-image-18661 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87b9ce955.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87b9ce955.png?w=499&amp;ssl=1 499w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be87b9ce955.png?resize=300%2C246&amp;ssl=1 300w" sizes="(max-width: 499px) 100vw, 499px" data-recalc-dims="1"/></li>
+<li>After the progress bar reaches 100%, click the X icon to close the installation window.<br/>
+<img class="alignnone size-full wp-image-19739 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fd1dd16da.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fd1dd16da.png?w=511&amp;ssl=1 511w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9fd1dd16da.png?resize=300%2C292&amp;ssl=1 300w" sizes="(max-width: 511px) 100vw, 511px" data-recalc-dims="1"/></li>
+</ol>
+<h4 id="toolboxfirewall">Firewall</h4>
+<ol>
+<li>Run <strong>Windows Firewall with Advanced Security</strong>.<br/>
+<img class="alignnone size-full wp-image-10751 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8128b25c6.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8128b25c6.png?w=390&amp;ssl=1 390w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8128b25c6.png?resize=300%2C122&amp;ssl=1 300w" sizes="(max-width: 390px) 100vw, 390px" data-recalc-dims="1"/></li>
+<li>Create a new <strong>Inbound Rule</strong> for port 18443.<br/>
+<img class="alignnone size-full wp-image-10752 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8158bcac1.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8158bcac1.png?w=322&amp;ssl=1 322w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce8158bcac1.png?resize=300%2C168&amp;ssl=1 300w" sizes="(max-width: 322px) 100vw, 322px" data-recalc-dims="1"/></li>
+<li>Select <strong>Port</strong> and, click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10753 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce816b38e72.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce816b38e72.png?w=523&amp;ssl=1 523w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce816b38e72.png?resize=300%2C212&amp;ssl=1 300w" sizes="(max-width: 523px) 100vw, 523px" data-recalc-dims="1"/></li>
+<li>Enter <strong>TCP 18443</strong> as the local port, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10754 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce817cc8a45.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce817cc8a45.png?w=556&amp;ssl=1 556w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce817cc8a45.png?resize=300%2C177&amp;ssl=1 300w" sizes="(max-width: 556px) 100vw, 556px" data-recalc-dims="1"/></li>
+<li><strong>Allow the connection</strong>, and click <strong>Next</strong>.<br/>
+<img class="alignnone size-full wp-image-10755 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce818a352ff.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce818a352ff.png?w=657&amp;ssl=1 657w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce818a352ff.png?resize=300%2C155&amp;ssl=1 300w" sizes="(max-width: 657px) 100vw, 657px" data-recalc-dims="1"/></li>
+<li>Name the rule <strong>Horizon Toolbox</strong> or something like that. Click <strong>Finish</strong>.<br/>
+<img class="alignnone size-full wp-image-10756 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce819e32601.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce819e32601.png?w=435&amp;ssl=1 435w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/03/img_58ce819e32601.png?resize=300%2C204&amp;ssl=1 300w" sizes="(max-width: 435px) 100vw, 435px" data-recalc-dims="1"/></li>
+</ol>
+<h4 id="toolboxcertificate">Toolbox Certificate</h4>
+<p>Horizon Toolbox comes with a self-signed certificate. It can be replaced by doing the following:</p>
+<ol>
+<li>Copy a certificate .pfx file to <strong>C:\Program Files\VMware\HorizonToolbox\HorizonToolbox7.4\conf</strong>.<br/>
+<img class="alignnone size-full wp-image-21282 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64819a8e5ef.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64819a8e5ef.png?w=755&amp;ssl=1 755w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64819a8e5ef.png?resize=300%2C165&amp;ssl=1 300w" sizes="(max-width: 755px) 100vw, 755px" data-recalc-dims="1"/></li>
+<li>Edit the file <strong>server.</strong><strong>xml</strong> that’s in the same <strong>conf</strong> folder. Make sure your text editor is elevated (as administrator).<br/>
+<img class="alignnone size-full wp-image-21283 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6481a98fc56.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6481a98fc56.png?w=746&amp;ssl=1 746w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6481a98fc56.png?resize=300%2C171&amp;ssl=1 300w" sizes="(max-width: 746px) 100vw, 746px" data-recalc-dims="1"/></li>
+<li>In your text editor, do the following:
+<ol>
+<li>Scroll down to the <strong>&lt;Connector port=&#8221;18443&#8243;</strong> section (near line 85).</li>
+<li>Change the <strong>keystoreFile</strong> attribute to the name of your .pfx file.</li>
+<li>Change the <strong>keystorePass</strong> attribute to the password for your .pfx file.</li>
+<li>Add a new attribute <code><strong>keystoreType="PKCS12"</strong></code></li>
+</ol>
+</li>
+<li>Close and save the file.<br/>
+<img class="alignnone size-full wp-image-21284 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64821747b07.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64821747b07.png?w=842&amp;ssl=1 842w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64821747b07.png?resize=300%2C122&amp;ssl=1 300w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a64821747b07.png?resize=768%2C313&amp;ssl=1 768w" sizes="(max-width: 842px) 100vw, 842px" data-recalc-dims="1"/></li>
+<li>Restart the <strong>Apache Tomcat 8.5 Tomcat8</strong> service.<br/>
+<img class="alignnone size-full wp-image-18666 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8ad3d8fc0.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8ad3d8fc0.png?w=508&amp;ssl=1 508w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8ad3d8fc0.png?resize=300%2C190&amp;ssl=1 300w" sizes="(max-width: 508px) 100vw, 508px" data-recalc-dims="1"/></li>
+<li>Point your browser to <a href="https://view.corp.local:18443/toolbox">https://view.corp.local:18443/toolbox</a> and there should be no certificate error. Note: it takes several seconds for the toolbox Tomcat service to start; you can watch it in Task Manager.<br/>
+<img src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/bfad18568e4b02faf424f3326f195efe.png?w=1100" alt="" data-recalc-dims="1"/></li>
+</ol>
+<h4>Login to Horizon Toolbox</h4>
+<ol>
+<li>Point your browser to <a href="https://view.corp.local:18443/toolbox">https://view.corp.local:18443/toolbox</a></li>
+<li>Login using Horizon Administrator credentials.<br/>
+<img src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/9270cc56d2bfd23561594972430e221a.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>The first time you login, you might be prompted for passwords to eventdb and vcenter. Enter the passwords, and click <strong>Set</strong>.<br/>
+<img class="alignnone size-full wp-image-18667 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8b9bbfe7e.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8b9bbfe7e.png?w=759&amp;ssl=1 759w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8b9bbfe7e.png?resize=300%2C91&amp;ssl=1 300w" sizes="(max-width: 759px) 100vw, 759px" data-recalc-dims="1"/></li>
+<li>The primary benefit of Horizon Toolbox is the <strong>Auditing</strong> reports. This data comes from the Events database. Find more info on these features at the <a href="https://labs.vmware.com/flings/horizon-toolbox-2#summary" target="_blank" rel="noopener noreferrer">Fling website</a>.<br/>
+<img class="alignnone size-full wp-image-18673 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be905e954f6.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be905e954f6.png?w=620&amp;ssl=1 620w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be905e954f6.png?resize=300%2C170&amp;ssl=1 300w" sizes="(max-width: 620px) 100vw, 620px" data-recalc-dims="1"/></li>
+<li>The <strong>Console Access</strong> tab lets you access the console of your Horizon Agent virtual machines.<br/>
+<img class="alignnone size-full wp-image-18672 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be9048cfd4f.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be9048cfd4f.png?w=797&amp;ssl=1 797w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be9048cfd4f.png?resize=300%2C103&amp;ssl=1 300w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be9048cfd4f.png?resize=768%2C263&amp;ssl=1 768w" sizes="(max-width: 797px) 100vw, 797px" data-recalc-dims="1"/></li>
+</ol>
+<h4 id="ra">Toolbox Remote Assistance</h4>
+<p>Note: The new <a href="https://www.carlstalhood.com/vmware-horizon-7-configuration/#helpdesk" target="_blank" rel="noopener noreferrer">Help Desk</a> website is preferred over Toolbox Remote Assistance.</p>
+<ol>
+<li>On the Horizon Agent machine, navigate to the View Connection Server Horizon Toolbox folder <strong>\\vcs01\c$\Program Files\VMware\HorizonToolbox\HorizonToolbox7.4\webapps\toolbox\static\ra</strong>, and run <strong>Horizon_Remote_Assistance_Installer_v1035.</strong><strong>exe</strong>.<br/>
+<img class="alignnone size-full wp-image-21285 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6482824b33d.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6482824b33d.png?w=781&amp;ssl=1 781w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6482824b33d.png?resize=300%2C111&amp;ssl=1 300w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2018/01/img_5a6482824b33d.png?resize=768%2C285&amp;ssl=1 768w" sizes="(max-width: 781px) 100vw, 781px" data-recalc-dims="1"/></p>
+<ol>
+<li>You might be prompted to install .NET Framework 3.5.<br/>
+<img src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/36ba99eb292dad00efae69d55c1f0087.png?w=1100" alt="" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-18669 " src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c2d6a61a.png?w=1100" alt="" srcset="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c2d6a61a.png?w=658&amp;ssl=1 658w, https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c2d6a61a.png?resize=300%2C219&amp;ssl=1 300w" sizes="(max-width: 658px) 100vw, 658px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-18670 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c4a0ab07.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c4a0ab07.png?w=786&amp;ssl=1 786w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c4a0ab07.png?resize=300%2C214&amp;ssl=1 300w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/09/img_59be8c4a0ab07.png?resize=768%2C547&amp;ssl=1 768w" sizes="(max-width: 786px) 100vw, 786px" data-recalc-dims="1"/></li>
+<li>Click <strong>Install for End User</strong>.<br/>
+<img src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/c4ac0a5cf9f193ff7c42f5fca08cfd70.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>Click <strong>OK</strong> to launch Remote Assistance.<br/>
+<img src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/c56a430349475e6169aedfe43b1330c9.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>Close Remote Assistance.<br/>
+<img src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/31b16031e4dd2e5e11aa106d0d4694f4.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>When done, click <strong>Finish</strong>.<br/>
+<img src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/ed3d72ce557a312c21d3397fd293d3a5.png?w=1100" alt="" data-recalc-dims="1"/></li>
+</ol>
+</li>
+<li>Users can initiate a request by clicking the <strong>Horizon Remote Assistance</strong> icon on the desktop.<br/>
+<img src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/ae69230e60fdb58bd2e15426e946e134.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>Click <strong>OK</strong> to submit a request.<br/>
+<img src="https://i0.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/80c3a09be332b60e7ce692e04eb3bf35.png?w=1100" alt="" data-recalc-dims="1"/><br/>
+<img src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2015/12/3ab914ea1e2b4433f49041e74b756d18.png?w=1100" alt="" data-recalc-dims="1"/></li>
+<li>Support people can see support requests in the Toolbox interface, at <strong>Management &gt; Remote Assistance</strong>, and switch to the <strong>Remote Assistance Requests</strong> tab.<br/>
+<img class="alignnone size-full wp-image-19744 " src="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9ff982c3a1.png?w=1100" alt="" srcset="https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9ff982c3a1.png?w=935&amp;ssl=1 935w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9ff982c3a1.png?resize=300%2C105&amp;ssl=1 300w, https://i1.wp.com/www.carlstalhood.com/wp-content/uploads/2017/10/img_59e9ff982c3a1.png?resize=768%2C268&amp;ssl=1 768w" sizes="(max-width: 935px) 100vw, 935px" data-recalc-dims="1"/></li>
+</ol>
+<h3 id="logonmonitor">Logon Monitoring</h3>
+<p>The <a href="https://labs.vmware.com/flings/vmware-logon-monitor#instructions" target="_blank" rel="noopener noreferrer">VMware Logon Monitor</a> Fling is built into Horizon 7.1 and newer.</p>
+<p>The logon logs are stored at <strong>C:\programdata\VMware\VMware Logon Monitor\Logs</strong> on each Horizon Agent. The <a href="https://labs.vmware.com/flings/vmware-logon-monitor#instructions" target="_blank" rel="noopener noreferrer">Fling website</a> has a PDF that explains how to also store them on a file share.<br/>
+<img class="alignnone size-full wp-image-13044 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f46e2f0d7.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f46e2f0d7.png?w=786&amp;ssl=1 786w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f46e2f0d7.png?resize=300%2C101&amp;ssl=1 300w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f46e2f0d7.png?resize=768%2C258&amp;ssl=1 768w" sizes="(max-width: 786px) 100vw, 786px" data-recalc-dims="1"/><br/>
+<img class="alignnone size-full wp-image-13046 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f4ed4bfcb.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f4ed4bfcb.png?w=715&amp;ssl=1 715w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f4ed4bfcb.png?resize=300%2C150&amp;ssl=1 300w" sizes="(max-width: 715px) 100vw, 715px" data-recalc-dims="1"/></p>
+<p>Inside each session log file are logon time statistics. <img class="alignnone size-full wp-image-13047 " src="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f526c6c79.png?w=1100" alt="" srcset="https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f526c6c79.png?w=892&amp;ssl=1 892w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f526c6c79.png?resize=300%2C87&amp;ssl=1 300w, https://i2.wp.com/www.carlstalhood.com/wp-content/uploads/2017/05/img_5918f526c6c79.png?resize=768%2C222&amp;ssl=1 768w" sizes="(max-width: 892px) 100vw, 892px" data-recalc-dims="1"/></p>
+	</div><!-- .entry-content -->
+
+	
+	<footer class="entry-footer">
+		<span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/" rel="bookmark"><time class="entry-date published" datetime="2020-06-05T05:40:42-05:00">June 5, 2020</time></a></span><span class="byline"><span class="author vcard"><span class="screen-reader-text">Author </span><a class="url fn n" href="https://www.carlstalhood.com/author/carl-stalhood/">Carl Stalhood</a></span></span><span class="cat-links"><span class="screen-reader-text">Categories </span><a href="https://www.carlstalhood.com/category/vmware-horizon/vmware-horizon-7/" rel="category tag">VMware Horizon 7</a></span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			138 thoughts on &ldquo;VMware Horizon 7.12 Connection Server&rdquo;		</h2>
+
+				<nav class="navigation comment-navigation" role="navigation">
+		<h2 class="screen-reader-text">Comment navigation</h2>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-1/#comments">Older Comments</a></div>			</div><!-- .nav-links -->
+		</nav><!-- .comment-navigation -->
+			
+		<ol class="comment-list">
+					<li id="comment-14701" class="comment even thread-even depth-1">
+			<article id="div-comment-14701" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/47b6e912eeafbb2530676c5049eadc8c?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/47b6e912eeafbb2530676c5049eadc8c?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Zubair</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14701">
+							<time datetime="2020-07-03T17:20:21-05:00">
+								July 3, 2020 at 5:20 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl,</p>
+<p>I am having active passive setup for production environment. And planning to upgrade to latest version 7.12. Before proceeding with production i want to built an development environmemt.</p>
+<p>Can i use same vcenter server for development lab.</p>
+<p>Thanks in advance as i know you would be having to my question</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14701#respond' data-commentid="14701" data-postid="3285" data-belowelement="div-comment-14701" data-respondelement="respond" aria-label='Reply to Zubair'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-14650" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-14650" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/6f0a75527872ad8144d37a63950790c0?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6f0a75527872ad8144d37a63950790c0?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn"><a href='http://gravatar.com/karthik10025' rel='external nofollow ugc' class='url'>karthik10025Karthik</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14650">
+							<time datetime="2020-06-22T14:30:33-05:00">
+								June 22, 2020 at 2:30 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I have added physical machine to the desktop pool in Horizon which is not managed by vCenter server, the status of the machine is always &#8216;Agent Unreachable&#8217;. Please help me</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14650#respond' data-commentid="14650" data-postid="3285" data-belowelement="div-comment-14650" data-respondelement="respond" aria-label='Reply to karthik10025Karthik'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-14652" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-14652" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14652">
+							<time datetime="2020-06-22T15:31:12-05:00">
+								June 22, 2020 at 3:31 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Did you follow this procedure? <a href="https://kb.vmware.com/s/article/2001870" rel="nofollow ugc">https://kb.vmware.com/s/article/2001870</a></p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14652#respond' data-commentid="14652" data-postid="3285" data-belowelement="div-comment-14652" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-14626" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-14626" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/9cb99d3934046bdb2d543be89a4dcbe5?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9cb99d3934046bdb2d543be89a4dcbe5?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Jeff Simmons</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14626">
+							<time datetime="2020-06-18T16:15:56-05:00">
+								June 18, 2020 at 4:15 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Carl,</p>
+<p>Great articles as always.  I did have one point of information that perhaps you could clarify.  In my environment, we did setup 2 connection servers, a primary and a replica.  We also have a Kemp VLB load balancing the 2.  What is the proper method for upgrading them in a nondisruptive way?  We do not have tunneling enabled, so users are connecting directly to their persistent VDI&#8217;s through the UAG&#8217;s.  Should I disable a connection server inside of Horizon?  Inside of the Kemp console?  Both?  One server was rebooted post windows updates and every connection was disconnected.  both connection servers stopped accepting connections even though only 1 was rebooted.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14626#respond' data-commentid="14626" data-postid="3285" data-belowelement="div-comment-14626" data-respondelement="respond" aria-label='Reply to Jeff Simmons'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-14630" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-14630" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14630">
+							<time datetime="2020-06-19T05:58:03-05:00">
+								June 19, 2020 at 5:58 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I usually disable on the load balancer. </p>
+<p>Restarting one should not affect the other. And restarting one should not drop connections if tunneling truly is disabled.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14630#respond' data-commentid="14630" data-postid="3285" data-belowelement="div-comment-14630" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-14198" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-14198" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/aabbd081f0180ab2e2a2db8472cc2426?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/aabbd081f0180ab2e2a2db8472cc2426?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">MILIND NAGRALE</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14198">
+							<time datetime="2020-04-21T03:58:22-05:00">
+								April 21, 2020 at 3:58 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl,<br/>
+Is it possible to collect source PC IP address or Thin client IP address from where we launching our Horizon VDI?<br/>
+Can we collect this report from VROPs or can we create dashboard fro the same?<br/>
+I am using Horizon 7 a<br/>
+I need to know users&#8217;s desktop , laptop IP from where he is accessing my Horizon VDI.</p>
+<p>Thanks,<br/>
+Milind</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14198#respond' data-commentid="14198" data-postid="3285" data-belowelement="div-comment-14198" data-respondelement="respond" aria-label='Reply to MILIND NAGRALE'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-14199" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-14199" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14199">
+							<time datetime="2020-04-21T06:11:46-05:00">
+								April 21, 2020 at 6:11 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Horizon Help Desk shows Client IP in real time. Horizon Toolbox used to collect info like this. Do you see the Client IP in the Horizon Events database? If so, you can query the database. Otherwise, you can create a login script to capture the data.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14199#respond' data-commentid="14199" data-postid="3285" data-belowelement="div-comment-14199" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-14004" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-14004" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/e06b18dac9c39c69eefec1fff01ae49f?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e06b18dac9c39c69eefec1fff01ae49f?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Kyle</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14004">
+							<time datetime="2020-03-27T09:13:16-05:00">
+								March 27, 2020 at 9:13 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Carl,</p>
+<p>We recently setup a new environment with two connection servers. One of them is working correctly, but the other one is getting a &#8220;ERR_SSL_VERSION_OR_CIPHER_MISMATCH&#8221; error in Chrome when trying to access the admin page. Triple checked and the cert does have the private key as well as it being exportable. We are confused as to why this one is happening on this server but not the other. Any help would be appreciated.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14004#respond' data-commentid="14004" data-postid="3285" data-belowelement="div-comment-14004" data-respondelement="respond" aria-label='Reply to Kyle'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-14005" class="comment even depth-2">
+			<article id="div-comment-14005" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/e876a81a408ec39afa7cad7180ea6b08?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e876a81a408ec39afa7cad7180ea6b08?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Chris Phillips</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14005">
+							<time datetime="2020-03-27T09:56:57-05:00">
+								March 27, 2020 at 9:56 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Kyle,<br/>
+look in cdeveloper ode in chrome when connecting to the CS server and check what ciphers are being negotiated, it could be that the CS is trying to negotiate a CIPHER that chrome isn&#8217;t happy with.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14005#respond' data-commentid="14005" data-postid="3285" data-belowelement="div-comment-14005" data-respondelement="respond" aria-label='Reply to Chris Phillips'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13946" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-13946" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/f4d83859e7f9ca9a0bce17cd72cdc74d?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f4d83859e7f9ca9a0bce17cd72cdc74d?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">psy</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13946">
+							<time datetime="2020-03-20T11:22:35-05:00">
+								March 20, 2020 at 11:22 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl,<br/>
+Is there a way to get the list of horizon client versions used by the users. I know that we can see it in new html5 admin console but I am looking for list of 1000 users so looking them individually wont work. I tried vrops 8 too but I could find a way to get it. Please help. Thanks.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13946#respond' data-commentid="13946" data-postid="3285" data-belowelement="div-comment-13946" data-respondelement="respond" aria-label='Reply to psy'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13947" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-13947" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13947">
+							<time datetime="2020-03-20T12:38:46-05:00">
+								March 20, 2020 at 12:38 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>The Horizon Toolbox can collect that info, assuming Toolbox works for your version of Horizon.</p>
+<p>Otherwise, write a script to log HKCU -> Volatile Environment -> ViewClient_Client_Version or environment variable, ViewClient_Client_Version.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13947#respond' data-commentid="13947" data-postid="3285" data-belowelement="div-comment-13947" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13926" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-13926" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/2d76e2a071998662f403edc5a241b2e7?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/2d76e2a071998662f403edc5a241b2e7?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Enrico</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13926">
+							<time datetime="2020-03-18T19:08:15-05:00">
+								March 18, 2020 at 7:08 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi there,</p>
+<p>currently running a horizon environment, with one security server in dmz and 2 connection servers &#8211; version 7.2</p>
+<p>I wanted to upgrade the environment &#8211; switchting to UAG Server 3.8 in the DMZ and 2 new 7.11 servers with latest windows os.</p>
+<p>I though easiest way with almost zero downtime would just be establish a second parallel horizon environment and when everything is working, just switch the vms / physical machines from the current horizon environment to the new one.</p>
+<p>But after reading your article, I&#8217;m not quite sure if this even is possible to do so?</p>
+<p>Thanks for the help</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13926#respond' data-commentid="13926" data-postid="3285" data-belowelement="div-comment-13926" data-respondelement="respond" aria-label='Reply to Enrico'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13929" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2 parent">
+			<article id="div-comment-13929" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13929">
+							<time datetime="2020-03-19T04:37:31-05:00">
+								March 19, 2020 at 4:37 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>If your pools are non-persistent, then you can use your existing masters to rebuild the pools in the new environment. Or create new masters with new OS version.</p>
+<p>For existing persistent, Full Clone machines, you can add them to a Manual pool on the new environment. If they are linked clones, then you might have to convert them to Full Clones first by cloning each one.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13929#respond' data-commentid="13929" data-postid="3285" data-belowelement="div-comment-13929" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13960" class="comment odd alt depth-3">
+			<article id="div-comment-13960" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/2d76e2a071998662f403edc5a241b2e7?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/2d76e2a071998662f403edc5a241b2e7?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Enrico</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13960">
+							<time datetime="2020-03-24T06:15:03-05:00">
+								March 24, 2020 at 6:15 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Sry for asking again, never done that &#8211; last upgrade/migration from 6.x to 7.x with new windows server was done by someone else.</p>
+<p>Saying &#8220;master in new environment&#8221; you mean it is possible to install a new connection server and build a completely new group of them with a different connection url and all. (in the same vm environment)<br/>
+I&#8217;m just &#8220;scared&#8221; to break my running view environment or the ldap database ..</p>
+<p>regards</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13960#respond' data-commentid="13960" data-postid="3285" data-belowelement="div-comment-13960" data-respondelement="respond" aria-label='Reply to Enrico'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13789" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-13789" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/f4041626780d9da2748f3df4c8903716?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f4041626780d9da2748f3df4c8903716?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Sean</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13789">
+							<time datetime="2020-02-28T12:54:28-06:00">
+								February 28, 2020 at 12:54 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Carl,</p>
+<p>I have recently installed a Horizon 7.11 test environment on an evaluation license.. Every time I try to get a machine added to a manual desktop pool, it usually takes about a minute before the status reflects with an Error state in the web portal. Looking in the log file, I see a debug message with following:</p>
+<p>[CertMatchingTrustManager] invalid certificate (as expected) for X.X.X.X:443 InvalidCertificateException[reasons;notTrusted;CantCheckRevoked; message: &#8216;ValidateCertificateChain Result: FAIL, EndEntityReasons: cantCheckRevoked, ChainReasons: partialChain, noTrust&#8217;]</p>
+<p>I exported the self-signed cert from VCenter and added it as a trusted root for my Horizon server but still run into the same issue.</p>
+<p>Analyzing the agent side logs, I see the following:</p>
+<p>[AgentJmsConfig] Attempting to securely pair agent for JMS communication<br/>
+[AgentMessageSecurityHandler] Configuring message security (ENHANCED)<br/>
+[JMSMessageSecurity] Failed to sign message: cannot sign message<br/>
+[BrokerUpdateUtility] Published CHANGEKEY request<br/>
+[BrokerUpdateUtility] Timeout waiting for success response</p>
+<p>The kb articles posted on VMware mentioned you can use the self-signed for testing purposes but I&#8217;m not seeing documentation on how to establish trust between VCenter and Horizon. Can you assist and/or point me in the right direction?</p>
+<p>Thanks</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13789#respond' data-commentid="13789" data-postid="3285" data-belowelement="div-comment-13789" data-respondelement="respond" aria-label='Reply to Sean'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13792" class="comment byuser comment-author-carl-stalhood bypostauthor odd alt depth-2">
+			<article id="div-comment-13792" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13792">
+							<time datetime="2020-02-28T13:57:19-06:00">
+								February 28, 2020 at 1:57 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Do you have an internal Certificate Authority that all machines can access? If not, I would install the Microsoft CA role somewhere and use it to generate internal certificates with a reachable CRL. This error looks like a problem with the Connection Serer certificate.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13792#respond' data-commentid="13792" data-postid="3285" data-belowelement="div-comment-13792" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13735" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-13735" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/d2d6ac3d257b32e69176919ecb63d9d9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/d2d6ac3d257b32e69176919ecb63d9d9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Raf</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13735">
+							<time datetime="2020-02-19T23:10:33-06:00">
+								February 19, 2020 at 11:10 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl,<br/>
+Great post!<br/>
+I seem to be unable to log into the Horizon Console after a fresh install. I tried with both domain controller and local users. Neither seems to work. Any tips on where to look for solutions? I&#8217;ve searched google in vain. Thank you in advance.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13735#respond' data-commentid="13735" data-postid="3285" data-belowelement="div-comment-13735" data-respondelement="respond" aria-label='Reply to Raf'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13736" class="comment byuser comment-author-carl-stalhood bypostauthor odd alt depth-2">
+			<article id="div-comment-13736" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13736">
+							<time datetime="2020-02-20T06:08:04-06:00">
+								February 20, 2020 at 6:08 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>The person that installed the product should be able to log in. I assume you see the logon page, because it doesn&#8217;t always appear in Chrome.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13736#respond' data-commentid="13736" data-postid="3285" data-belowelement="div-comment-13736" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13730" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-13730" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/25cdf50f43791cd43a58bd1f08f68f61?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/25cdf50f43791cd43a58bd1f08f68f61?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Juan Lopez</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13730">
+							<time datetime="2020-02-18T10:29:09-06:00">
+								February 18, 2020 at 10:29 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl.   Just wanted to thank you for your very informative blog. I setup horizon a year ago here at my work. If it weren&#8217;t for your blog i would have probably been stuck many a times had to had to depend on the vmware&#8217;s website and kb articles. I seriously think they were made by robots for robots. Your in depth explainations have made even upgrading the environment painless whereas reading on vmware horizon how to upgrade they make it sound like everything is going to break . Your step by step visual documentation is a life saver.  Thank you so much.. I have become a huge fan of your knowledge.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13730#respond' data-commentid="13730" data-postid="3285" data-belowelement="div-comment-13730" data-respondelement="respond" aria-label='Reply to Juan Lopez'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-13698" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-13698" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7f6731ddbc966500e976fe7d0343b9a0?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7f6731ddbc966500e976fe7d0343b9a0?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Jeremy DeStefano</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13698">
+							<time datetime="2020-02-12T15:44:42-06:00">
+								February 12, 2020 at 3:44 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I&#8217;ve got 2 Connection servers, currently running 2008R2 and Horizon 7.3.2.  Normally I would just update Horizon in place, but if I want to replace the servers with Svr 2019, what would be the easiest way?  Can I add in the two new 2019 servers and promote one to the primary and then remove the 2008R2?  Or would another method be easier?  </p>
+<p>Thanks for the article&#8230;I always come back to your page when trying to upgrade.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13698#respond' data-commentid="13698" data-postid="3285" data-belowelement="div-comment-13698" data-respondelement="respond" aria-label='Reply to Jeremy DeStefano'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13701" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-13701" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13701">
+							<time datetime="2020-02-12T16:37:07-06:00">
+								February 12, 2020 at 4:37 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>I would probably in-place upgrade your existing Connection Servers to 7.8 or newer for 2019 support. Then add new 2019 Connection Servers. Hopefully no Security Servers. Don&#8217;t forget pool tagging. Swap the Connection Servers out on the load balancers. Then shut down the old connection servers and run the vdmadmin -S command to remove them from LDAP.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13701#respond' data-commentid="13701" data-postid="3285" data-belowelement="div-comment-13701" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13658" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-13658" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/4a3fd74fbebae17ef29c76922b62f909?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4a3fd74fbebae17ef29c76922b62f909?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">DJ 466</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13658">
+							<time datetime="2020-02-06T14:51:40-06:00">
+								February 6, 2020 at 2:51 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hey it&#8217;s great post.<br/>
+I have one question that.</p>
+<p>I have total 6 connection servers. with 7.10 what is process should I follow up.<br/>
+means : first install master from 7.10 to 7.11 while selecting the standard server for master server.</p>
+<p>For other connection servers od i need to install in each server by logging or  if master server upgraded to 7.11 so the other connection server will automatically upgrade ?</p>
+<p>or we have to login each connection server and install by selecting the standard&#8230;..next&#8230;.next..?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13658#respond' data-commentid="13658" data-postid="3285" data-belowelement="div-comment-13658" data-respondelement="respond" aria-label='Reply to DJ 466'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13659" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2">
+			<article id="div-comment-13659" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13659">
+							<time datetime="2020-02-06T15:00:46-06:00">
+								February 6, 2020 at 3:00 pm							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Each server needs to be upgraded separately. Order doesn&#8217;t matter. All server should be upgraded in the same maintenance window.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13659#respond' data-commentid="13659" data-postid="3285" data-belowelement="div-comment-13659" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-13476" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-13476" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/9f0e75153afe857300dfa558f4b5eb49?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9f0e75153afe857300dfa558f4b5eb49?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Chris Phillips</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13476">
+							<time datetime="2020-01-10T06:19:07-06:00">
+								January 10, 2020 at 6:19 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Hi Carl,</p>
+<p>VMwares product documentation specifies using netbios names when declaring additional domains via vdmadmin. </p>
+<p><a href="https://docs.vmware.com/en/VMware-Horizon-7/7.11/horizon-console-administration/GUID-3E9924EC-1554-43E5-A812-84F9711909A5.html" rel="nofollow ugc">https://docs.vmware.com/en/VMware-Horizon-7/7.11/horizon-console-administration/GUID-3E9924EC-1554-43E5-A812-84F9711909A5.html</a></p>
+<p>In a world where netbios has long been deprecated and disabled on nic interfaces can you provide any detail on why VMware are requiring netbios for Horizon &amp; how it would work for connecting Connection Servers to additional domains (not the native domain that the specific windows server is joined to) in a different subnet (netbios name resolution is a broadcast &amp; won&#8217;t traverse a router).</p>
+<p>Trying to understand an issue where a multi domain solution stopped seeing additional domains after upgrading to 7.8 and above, works fine with FQDN&#8217;s on 7.7.</p>
+<p>Thanks</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13476#respond' data-commentid="13476" data-postid="3285" data-belowelement="div-comment-13476" data-respondelement="respond" aria-label='Reply to Chris Phillips'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-13477" class="comment byuser comment-author-carl-stalhood bypostauthor even depth-2 parent">
+			<article id="div-comment-13477" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7802c7e42dba0e0ffa7576d7d37dc314?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Carl Stalhood</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-13477">
+							<time datetime="2020-01-10T08:26:31-06:00">
+								January 10, 2020 at 8:26 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Every Active Directory domain has a NetBIOS name in addition to it&#8217;s DNS name. When you log into windows, you typically enter NetBIOS_Domain\username. The domain&#8217;s DNS name is typically only used for UPN logins.</p>
+<p>Note: computer names are also NetBIOS names, which is why they need to be 15 characters or less.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=13477#respond' data-commentid="13477" data-postid="3285" data-belowelement="div-comment-13477" data-respondelement="respond" aria-label='Reply to Carl Stalhood'>Reply</a></div>			</article><!-- .comment-body -->
+		<ol class="children">
+		<li id="comment-14006" class="comment odd alt depth-3">
+			<article id="div-comment-14006" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='https://secure.gravatar.com/avatar/e876a81a408ec39afa7cad7180ea6b08?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e876a81a408ec39afa7cad7180ea6b08?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56'/>						<b class="fn">Chris Phillips</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-2/#comment-14006">
+							<time datetime="2020-03-27T10:00:18-05:00">
+								March 27, 2020 at 10:00 am							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Thanks Carl,</p>
+<p>our answer was 7.12. VMware have reinstated the ability to use FQDN&#8217;s. I still can&#8217;t understand why they&#8217;d remove the use of FQDN&#8217;s &amp; mandate netbios but thats not an issue any more.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://www.carlstalhood.com/vmware-horizon-7-connection-server/?replytocom=14006#respond' data-commentid="14006" data-postid="3285" data-belowelement="div-comment-14006" data-respondelement="respond" aria-label='Reply to Chris Phillips'>Reply</a></div>			</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+				<nav class="navigation comment-navigation" role="navigation">
+		<h2 class="screen-reader-text">Comment navigation</h2>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://www.carlstalhood.com/vmware-horizon-7-connection-server/comment-page-1/#comments">Older Comments</a></div>			</div><!-- .nav-links -->
+		</nav><!-- .comment-navigation -->
+			
+	
+	
+	
+		<div id="respond" class="comment-respond">
+							<h3 id="reply-title" class="comment-reply-title">Leave a Reply					<small><a rel="nofollow" id="cancel-comment-reply-link" href="/vmware-horizon-7-connection-server/#respond" style="display:none;">Cancel reply</a></small>
+				</h3>
+						<form id="commentform" class="comment-form">
+				<iframe title="Comment Form" src="https://jetpack.wordpress.com/jetpack-comment/?blogid=82379469&#038;postid=3285&#038;comment_registration=0&#038;require_name_email=1&#038;stc_enabled=1&#038;stb_enabled=1&#038;show_avatars=1&#038;avatar_default=mystery&#038;greeting=Leave+a+Reply&#038;greeting_reply=Leave+a+Reply+to+%25s&#038;color_scheme=light&#038;lang=en_US&#038;jetpack_version=8.7&#038;show_cookie_consent=10&#038;has_cookie_consent=0&#038;token_key=%3Bnormal%3B&#038;sig=6c0bd2d80f54a1d98b7518500ca0c77bacda67c7#parent=https%3A%2F%2Fwww.carlstalhood.com%2Fvmware-horizon-7-connection-server%2F" style="width:100%; height: 430px; border:0;" name="jetpack_remote_comment" class="jetpack_remote_comment" id="jetpack_remote_comment" sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms allow-popups"></iframe>
+									<!--[if !IE]><!-->
+					<script>document.addEventListener('DOMContentLoaded',function(){var commentForms=document.getElementsByClassName('jetpack_remote_comment');for(var i=0;i<commentForms.length;i++){commentForms[i].allowTransparency=false;commentForms[i].scrolling='no';}});</script>
+					<!--<![endif]-->
+							</form>
+		</div>
+
+		
+		<input type="hidden" name="comment_parent" id="comment_parent" value=""/>
+
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.carlstalhood.com/vmware-horizon-7-composer/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">VMware Horizon 7.12 Composer</span></a></div><div class="nav-next"><a href="https://www.carlstalhood.com/vmware-horizon-7-configuration/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span> <span class="screen-reader-text">Next post:</span> <span class="post-title">VMware Horizon 7.12 Configuration</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	</div><!-- .site-content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.org/" class="imprint">
+				Proudly powered by WordPress			</a>
+		</div><!-- .site-info -->
+	</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.7/_inc/build/photon/photon.min.js'></script>
+<script type='text/javascript'>//<![CDATA[
+(function(){var ua=navigator.userAgent.toLowerCase();if((ua.indexOf('webkit')>-1||ua.indexOf('opera')>-1||ua.indexOf('msie')>-1)&&document.getElementById&&window.addEventListener){window.addEventListener('hashchange',function(){var element=document.getElementById(location.hash.substring(1));if(element){if(!/^(?:a|select|input|button|textarea)$/i.test(element.nodeName)){element.tabIndex=-1;}element.focus();}},false);}})();
+//]]></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript'>//<![CDATA[
+var screenReaderText={"expand":"<span class=\"screen-reader-text\">expand child menu<\/span>","collapse":"<span class=\"screen-reader-text\">collapse child menu<\/span>"};
+//]]></script>
+<script type='text/javascript' src='https://www.carlstalhood.com/wp-content/themes/twentyfifteen/js/functions.js?ver=20150330'></script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.7/_inc/build/twitter-timeline.min.js'></script>
+
+		<!--[if IE]>
+		<script type="text/javascript">if ( 0 === window.location.hash.indexOf( '#comment-' ) ) {
+				// window.location.reload() doesn't respect the Hash in IE
+				window.location.hash = window.location.hash;
+			}</script>
+		<![endif]-->
+		<script type="text/javascript">(function(){var comm_par_el=document.getElementById('comment_parent'),comm_par=(comm_par_el&&comm_par_el.value)?comm_par_el.value:'',frame=document.getElementById('jetpack_remote_comment'),tellFrameNewParent;tellFrameNewParent=function(){if(comm_par){frame.src="https://jetpack.wordpress.com/jetpack-comment/?blogid=82379469&postid=3285&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=8.7&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=6c0bd2d80f54a1d98b7518500ca0c77bacda67c7#parent=https%3A%2F%2Fwww.carlstalhood.com%2Fvmware-horizon-7-connection-server%2F"+'&replytocom='+parseInt(comm_par,10).toString();}else{frame.src="https://jetpack.wordpress.com/jetpack-comment/?blogid=82379469&postid=3285&comment_registration=0&require_name_email=1&stc_enabled=1&stb_enabled=1&show_avatars=1&avatar_default=mystery&greeting=Leave+a+Reply&greeting_reply=Leave+a+Reply+to+%25s&color_scheme=light&lang=en_US&jetpack_version=8.7&show_cookie_consent=10&has_cookie_consent=0&token_key=%3Bnormal%3B&sig=6c0bd2d80f54a1d98b7518500ca0c77bacda67c7#parent=https%3A%2F%2Fwww.carlstalhood.com%2Fvmware-horizon-7-connection-server%2F";}};if('undefined'!==typeof addComment){addComment._Jetpack_moveForm=addComment.moveForm;addComment.moveForm=function(commId,parentId,respondId,postId){var returnValue=addComment._Jetpack_moveForm(commId,parentId,respondId,postId),cancelClick,cancel;if(false===returnValue){cancel=document.getElementById('cancel-comment-reply-link');cancelClick=cancel.onclick;cancel.onclick=function(){var cancelReturn=cancelClick.call(this);if(false!==cancelReturn){return cancelReturn;}if(!comm_par){return cancelReturn;}comm_par=0;tellFrameNewParent();return cancelReturn;};}if(comm_par==parentId){return returnValue;}comm_par=parentId;tellFrameNewParent();return returnValue;};}document.addEventListener('DOMContentLoaded',function(){var iframe_url="https:\/\/jetpack.wordpress.com";if(window.postMessage){if(document.addEventListener){window.addEventListener('message',function(event){var origin=event.origin.replace(/^http:\/\//i,'https://');if(iframe_url.replace(/^http:\/\//i,'https://')!==origin){return;}jQuery(frame).height(event.data);});}else if(document.attachEvent){window.attachEvent('message',function(event){var origin=event.origin.replace(/^http:\/\//i,'https://');if(iframe_url.replace(/^http:\/\//i,'https://')!==origin){return;}jQuery(frame).height(event.data);});}}})})();</script>
+
+		<script type='text/javascript' src='https://stats.wp.com/e-202028.js' async='async' defer='defer'></script>
+<script type='text/javascript'>_stq=window._stq||[];_stq.push(['view',{v:'ext',j:'1:8.7',blog:'82379469',post:'3285',tz:'-5',srv:'www.carlstalhood.com'}]);_stq.push(['clickTrackerInit','82379469','3285']);</script>
+
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1594227927 -->
